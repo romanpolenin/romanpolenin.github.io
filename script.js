@@ -76,48 +76,34 @@ const projects = {
    ===================== */
 
 sombrero: {
-
     country: "Projects",
-
     name: "Sombrero",
-
     description:
         "A photographic study of the sombrero as an object, symbol and part of everyday life.",
-
     photos: [
-
         "images/sombrero-1.jpg",
         "images/sombrero-2.jpg",
         "images/sombrero-3.jpg",
         "images/sombrero-4.jpg"
-
     ]
 
 },
 
-
 mannequin: {
-
     country: "Projects",
-
     name: "Mannequin",
-
     description:
         "A study of mannequins, bodies and artificial representations of the human figure.",
-
     photos: [
-
         "images/mannequin-1.jpg",
         "images/mannequin-2.jpg",
         "images/mannequin-3.jpg",
         "images/mannequin-4.jpg"
-
     ]
-
 },
-
    
 streetmusic: {
+    country: "Projects",
     name: "Street Music",
     description:
         "Street musicians and performers encountered across Latin America.",
