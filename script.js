@@ -1,433 +1,814 @@
 /* =========================
    PROJECTS
    ========================= */
+
 const projects = {
+
+
+    /* =====================
+       MEXICO
+       ===================== */
+
+    zapatista: {
+
+        country: "Mexico",
+
+        name: "Zapatista",
+
+        description:
+            "Documentary project about the Zapatista communities in Chiapas.",
+
+        photos: [
+
+            "images/zapatista-1.jpg",
+            "images/zapatista-2.jpg",
+            "images/zapatista-3.jpg",
+            "images/zapatista-4.jpg"
+
+        ]
+
+    },
+
+
+    orizaba: {
+
+        country: "Mexico",
+
+        name: "Pico de Orizaba",
+
+        description:
+            "A journey toward Pico de Orizaba, the highest mountain in Mexico.",
+
+        photos: [
+
+            "images/orizaba-1.jpg",
+            "images/orizaba-2.jpg",
+            "images/orizaba-3.jpg",
+            "images/orizaba-4.jpg"
+
+        ]
+
+    },
+
+
+    "mexico-street": {
+
+        country: "Mexico",
+
+        name: "Street",
+
+        description:
+            "Fragments of everyday life and people encountered on the streets of Mexico.",
+
+        photos: [
+
+            "images/mexico-street-1.jpg",
+            "images/mexico-street-2.jpg",
+            "images/mexico-street-3.jpg",
+            "images/mexico-street-4.jpg"
+
+        ]
+
+    },
+
+
+    /* =====================
+       GUATEMALA
+       ===================== */
+
     atitlan: {
-        name: "Lake Atitlán",
+
+        country: "Guatemala",
+
+        name: "Atitlán",
+
+        description:
+            "Life around Lake Atitlán and the communities living on its shores.",
+
         photos: [
-        "images/atitlan-1.jpg",
-        "images/atitlan-2.jpg",
-        "images/atitlan-3.jpg",
-        "images/atitlan-4.jpg",
-        "images/atitlan-5.jpg",
-        "images/atitlan-6.jpg",
-        "images/atitlan-7.jpg",
-        "images/atitlan-8.jpg",
-        "images/atitlan-9.jpg",
-        "images/atitlan-10.jpg",
-        "images/atitlan-11.jpg",
-        "images/atitlan-12.jpg",
-        "images/atitlan-13.jpg",
-        "images/atitlan-14.jpg",
-        "images/atitlan-15.jpg",
-        "images/atitlan-16.jpg",
-        "images/atitlan-17.jpg",
-        "images/atitlan-18.jpg",
-        "images/atitlan-19.jpg",
-        "images/atitlan-20.jpg",
-        "images/atitlan-21.jpg",
-        "images/atitlan-22.jpg",
-        "images/atitlan-23.jpg",
-        "images/atitlan-24.jpg",
-        "images/atitlan-25.jpg",
-        "images/atitlan-26.jpg",
-        "images/atitlan-27.jpg",
-        "images/atitlan-28.jpg",
-        "images/atitlan-29.jpg",
-        "images/atitlan-30.jpg",
-        "images/atitlan-31.jpg",
-        "images/atitlan-32.jpg",
-        "images/atitlan-33.jpg",
-        "images/atitlan-34.jpg",
-        "images/atitlan-35.jpg",
-        "images/atitlan-36.jpg",
-        "images/atitlan-37.jpg",
-        "images/atitlan-38.jpg",
-        "images/atitlan-39.jpg",
-        "images/atitlan-40.jpg",
-        "images/atitlan-41.jpg"
+
+            "images/atitlan-1.jpg",
+            "images/atitlan-2.jpg",
+            "images/atitlan-3.jpg",
+            "images/atitlan-4.jpg"
+
         ]
+
     },
-    mexico: {
-        name: "Mexico",
+
+
+    tajumulco: {
+
+        country: "Guatemala",
+
+        name: "Tajumulco",
+
+        description:
+            "A journey to Tajumulco, the highest point in Guatemala.",
+
         photos: [
-            "images/mexico-01.jpg",
-            "images/mexico-02.jpg",
-            "images/mexico-03.jpg"
+
+            "images/tajumulco-1.jpg",
+            "images/tajumulco-2.jpg",
+            "images/tajumulco-3.jpg",
+            "images/tajumulco-4.jpg"
+
         ]
+
     },
-    portraits: {
-        name: "Portraits",
+
+
+    "guatemala-street": {
+
+        country: "Guatemala",
+
+        name: "Street",
+
+        description:
+            "People, streets and everyday moments observed across Guatemala.",
+
         photos: [
-            "images/portrait-01.jpg",
-            "images/portrait-02.jpg",
-            "images/portrait-03.jpg"
+
+            "images/guatemala-street-1.jpg",
+            "images/guatemala-street-2.jpg",
+            "images/guatemala-street-3.jpg",
+            "images/guatemala-street-4.jpg"
+
         ]
-    },
-    street: {
-        name: "Street Musicians",
-        photos: [
-            "images/street-01.jpg",
-            "images/street-02.jpg",
-            "images/street-03.jpg"
-        ]
+
     }
+
 };
+
+
 /* =========================
    ELEMENTS
    ========================= */
+
 const slidesContainer =
     document.getElementById("slides");
+
+
 const projectName =
     document.getElementById("project-name");
+
+
+const projectDescription =
+    document.getElementById(
+        "project-description"
+    );
+
+
 const counter =
     document.getElementById("counter");
+
+
 const projectButtons =
     document.querySelectorAll(".project");
+
+
+const countryButtons =
+    document.querySelectorAll(
+        ".country-title"
+    );
+
+
 const previousButton =
     document.getElementById("prev");
+
+
 const nextButton =
     document.getElementById("next");
+
+
 const aboutButton =
-    document.getElementById("about-button");
+    document.getElementById(
+        "about-button"
+    );
+
+
 const nameLink =
     document.querySelector(".name");
+
+
 const about =
     document.getElementById("about");
+
+
 const aboutClose =
-    document.getElementById("about-close");
+    document.getElementById(
+        "about-close"
+    );
+
+
 /* =========================
    STATE
    ========================= */
-let currentProject = "atitlan";
-let currentSlide = 0;
-let isChanging = false;
+
+let currentProject =
+    "zapatista";
+
+
+let currentSlide =
+    0;
+
+
+let isChanging =
+    false;
+
+
 /* =========================
    PRELOAD IMAGE
    ========================= */
+
 function preloadImage(src) {
+
     return new Promise(
         (resolve, reject) => {
+
             const image =
                 new Image();
-            image.onload = resolve;
-            image.onerror = reject;
-            image.src = src;
+
+
+            image.onload =
+                resolve;
+
+
+            image.onerror =
+                reject;
+
+
+            image.src =
+                src;
+
         }
     );
+
 }
+
+
 /* =========================
    SHOW PROJECT
    ========================= */
-async function showProject(projectId) {
+
+async function showProject(
+    projectId
+) {
+
     const project =
         projects[projectId];
+
+
     if (!project) {
         return;
     }
+
+
     currentProject =
         projectId;
-    currentSlide = 0;
+
+
+    currentSlide =
+        0;
+
+
+    /* Project information */
+
     projectName.textContent =
         project.name;
-    /*
-        Clear gallery
-    */
-    slidesContainer.innerHTML = "";
-    /*
-        Create slides
-    */
+
+
+    projectDescription.textContent =
+        project.description;
+
+
+    /* Clear gallery */
+
+    slidesContainer.innerHTML =
+        "";
+
+
+    /* Create slides */
+
     project.photos.forEach(
         (photo, index) => {
+
             const slide =
-                document.createElement("div");
+                document.createElement(
+                    "div"
+                );
+
+
             slide.className =
                 "slide";
+
+
             if (index === 0) {
+
                 slide.classList.add(
                     "active"
                 );
+
             }
+
+
             const image =
-                document.createElement("img");
+                document.createElement(
+                    "img"
+                );
+
+
             image.src =
                 photo;
+
+
             image.alt =
                 project.name +
                 " — photograph " +
                 (index + 1);
+
+
             image.draggable =
                 false;
+
+
+            image.loading =
+                index === 0
+                    ? "eager"
+                    : "lazy";
+
+
             slide.appendChild(
                 image
             );
+
+
             slidesContainer.appendChild(
                 slide
             );
+
         }
     );
+
+
     updateCounter();
-    /*
-        Active project
-    */
+
+
+    /* Active project */
+
     projectButtons.forEach(
         button => {
+
             button.classList.remove(
                 "active"
             );
+
+
             if (
                 button.dataset.project
                 === projectId
             ) {
+
                 button.classList.add(
                     "active"
                 );
+
             }
+
         }
     );
-    /*
-        Close About
-    */
+
+
+    /* Close About */
+
     about.classList.remove(
         "open"
     );
+
 }
+
+
 /* =========================
    SHOW SLIDE
    ========================= */
+
 async function showSlide(index) {
+
     if (isChanging) {
         return;
     }
+
+
     const slides =
         document.querySelectorAll(
             ".slide"
         );
-    if (slides.length === 0) {
+
+
+    if (!slides.length) {
         return;
     }
-    let newIndex = index;
-    /*
-        Loop
-    */
+
+
+    let newIndex =
+        index;
+
+
+    /* Loop */
+
     if (newIndex < 0) {
+
         newIndex =
             slides.length - 1;
+
     }
+
+
     if (
         newIndex >= slides.length
     ) {
-        newIndex = 0;
+
+        newIndex =
+            0;
+
     }
-    /*
-        Same slide
-    */
+
+
     if (
         newIndex === currentSlide
     ) {
+
         return;
+
     }
-    isChanging = true;
-    /*
-        Load image first
-    */
+
+
+    isChanging =
+        true;
+
+
     const project =
         projects[currentProject];
+
+
     try {
+
         await preloadImage(
             project.photos[newIndex]
         );
+
     }
     catch {
-        isChanging = false;
+
+        isChanging =
+            false;
+
         return;
+
     }
-    /*
-        Remove active
-    */
+
+
     slides[currentSlide]
-        .classList.remove("active");
-    /*
-        New slide
-    */
+        .classList.remove(
+            "active"
+        );
+
+
     currentSlide =
         newIndex;
+
+
     slides[currentSlide]
-        .classList.add("active");
+        .classList.add(
+            "active"
+        );
+
+
     updateCounter();
-    /*
-        Small delay prevents
-        accidental double click
-    */
+
+
     setTimeout(
         () => {
-            isChanging = false;
+
+            isChanging =
+                false;
+
         },
         400
     );
+
 }
+
+
 /* =========================
    NEXT
    ========================= */
+
 function nextSlide() {
+
     showSlide(
         currentSlide + 1
     );
+
 }
+
+
 /* =========================
    PREVIOUS
    ========================= */
+
 function previousSlide() {
+
     showSlide(
         currentSlide - 1
     );
+
 }
+
+
 /* =========================
    COUNTER
    ========================= */
+
 function updateCounter() {
+
     const project =
         projects[currentProject];
+
+
     const current =
         String(
             currentSlide + 1
         ).padStart(2, "0");
+
+
     const total =
         String(
             project.photos.length
         ).padStart(2, "0");
+
+
     counter.textContent =
         current +
         " / " +
         total;
+
 }
+
+
 /* =========================
    PROJECT BUTTONS
    ========================= */
+
 projectButtons.forEach(
     button => {
+
         button.addEventListener(
             "click",
             () => {
+
                 showProject(
                     button.dataset.project
                 );
+
             }
         );
+
     }
 );
+
+
+/* =========================
+   COUNTRY COLLAPSIBLE MENU
+   ========================= */
+
+countryButtons.forEach(
+    button => {
+
+        button.addEventListener(
+            "click",
+            () => {
+
+                const country =
+                    button.dataset.country;
+
+
+                const menu =
+                    document.getElementById(
+                        country +
+                        "-projects"
+                    );
+
+
+                menu.classList.toggle(
+                    "closed"
+                );
+
+
+                button.classList.toggle(
+                    "closed"
+                );
+
+            }
+        );
+
+    }
+);
+
+
 /* =========================
    ARROWS
    ========================= */
+
 nextButton.addEventListener(
     "click",
     nextSlide
 );
+
+
 previousButton.addEventListener(
     "click",
     previousSlide
 );
+
+
 /* =========================
    KEYBOARD
    ========================= */
+
 document.addEventListener(
     "keydown",
     event => {
+
         if (
             about.classList.contains(
                 "open"
             )
         ) {
-            if (
-                event.key === "Escape"
-            ) {
-                about.classList.remove(
-                    "open"
-                );
-            }
+
             return;
+
         }
+
+
         if (
             event.key === "ArrowRight"
         ) {
+
             nextSlide();
+
         }
+
+
         if (
             event.key === "ArrowLeft"
         ) {
+
             previousSlide();
+
         }
+
     }
 );
+
+
 /* =========================
    TOUCH / SWIPE
    ========================= */
-let touchStartX = 0;
-let touchEndX = 0;
+
+let touchStartX =
+    0;
+
+
+let touchEndX =
+    0;
+
+
 slidesContainer.addEventListener(
     "touchstart",
     event => {
+
         touchStartX =
-            event.changedTouches[0]
+            event
+                .changedTouches[0]
                 .screenX;
+
     },
     { passive: true }
 );
+
+
 slidesContainer.addEventListener(
     "touchend",
     event => {
+
         touchEndX =
-            event.changedTouches[0]
+            event
+                .changedTouches[0]
                 .screenX;
+
+
         const distance =
             touchEndX -
             touchStartX;
+
+
         if (
             Math.abs(distance) < 50
         ) {
+
             return;
+
         }
+
+
         if (distance < 0) {
+
             nextSlide();
+
         }
         else {
+
             previousSlide();
+
         }
+
     },
     { passive: true }
 );
+
+
 /* =========================
    ABOUT
    ========================= */
+
 aboutButton.addEventListener(
     "click",
     () => {
+
         about.classList.add(
             "open"
         );
+
     }
 );
+
+
+/* NAME → ABOUT */
+
 nameLink.addEventListener(
     "click",
     event => {
 
         event.preventDefault();
 
+
         about.classList.add(
             "open"
         );
 
     }
 );
+
+
+/* CLOSE ABOUT */
+
 aboutClose.addEventListener(
     "click",
     () => {
+
         about.classList.remove(
             "open"
         );
+
     }
 );
+
+
+/* ESC */
+
+document.addEventListener(
+    "keydown",
+    event => {
+
+        if (
+            event.key === "Escape"
+        ) {
+
+            about.classList.remove(
+                "open"
+            );
+
+        }
+
+    }
+);
+
+
 /* =========================
    INITIALIZE
    ========================= */
-showProject("atitlan");
+
+showProject(
+    "zapatista"
+);
