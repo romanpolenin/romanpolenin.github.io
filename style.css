@@ -1,0 +1,236 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: #ffffff;
+    color: #111111;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+
+/* HEADER */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 22px 30px;
+
+    background: rgba(255,255,255,0.94);
+    z-index: 100;
+}
+
+.logo {
+    color: #111;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: #111;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+nav a:hover {
+    opacity: 0.5;
+}
+
+
+/* INTRO */
+
+.intro {
+    min-height: 75vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    padding: 30px;
+    padding-bottom: 70px;
+}
+
+.intro h1 {
+    margin: 0 0 10px;
+
+    font-size: clamp(45px, 8vw, 110px);
+    font-weight: 400;
+    letter-spacing: -0.04em;
+}
+
+.intro p {
+    margin: 0;
+    max-width: 400px;
+    color: #666;
+}
+
+
+/* WORK */
+
+.work {
+    padding: 0 30px;
+}
+
+.project {
+    display: block;
+
+    margin-bottom: 100px;
+
+    color: #111;
+    text-decoration: none;
+}
+
+.project img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    transition: opacity 0.3s ease;
+}
+
+.project:hover img {
+    opacity: 0.85;
+}
+
+.project-title {
+    display: flex;
+    justify-content: space-between;
+
+    padding-top: 10px;
+
+    font-size: 13px;
+}
+
+
+/* ABOUT */
+
+.about {
+    max-width: 900px;
+
+    margin: 180px 30px;
+
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 50px;
+}
+
+h2 {
+    margin: 0;
+
+    font-size: 13px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.about-text {
+    max-width: 600px;
+
+    font-size: 20px;
+    line-height: 1.45;
+}
+
+.about-text p {
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+
+/* CONTACT */
+
+.contact {
+    margin: 180px 30px 120px;
+}
+
+.contact p {
+    margin: 8px 0;
+}
+
+.contact a {
+    color: #111;
+    text-decoration: none;
+}
+
+.contact a:hover {
+    opacity: 0.5;
+}
+
+
+/* FOOTER */
+
+footer {
+    padding: 30px;
+
+    border-top: 1px solid #eee;
+
+    font-size: 12px;
+    color: #777;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .header {
+        padding: 18px;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    .intro {
+        min-height: 70vh;
+        padding: 18px;
+        padding-bottom: 50px;
+    }
+
+    .work {
+        padding: 0 18px;
+    }
+
+    .project {
+        margin-bottom: 70px;
+    }
+
+    .about {
+        display: block;
+
+        margin: 120px 18px;
+    }
+
+    .about-text {
+        margin-top: 30px;
+        font-size: 18px;
+    }
+
+    .contact {
+        margin: 120px 18px 80px;
+    }
+
+    footer {
+        padding: 18px;
+    }
+}
