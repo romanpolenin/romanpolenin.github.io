@@ -108,10 +108,10 @@ streetmusic: {
     description:
         "Street musicians and performers encountered across Latin America.",
     photos: [
-        "images/street-music-1.jpg",
-        "images/street-music-2.jpg",
-        "images/street-music-3.jpg",
-        "images/street-music-4.jpg"
+        "images/streetmusic-1.jpg",
+        "images/streetmusic-2.jpg",
+        "images/streetmusic-3.jpg",
+        "images/streetmusic-4.jpg"
     ]
 },
 
