@@ -5,7 +5,7 @@ const projects = {
         name: "Lake Atitlán",
 
         photos: [
-            "images/atitlan-01.jpg",
+            "images/FUJI1225.jpg",
             "images/atitlan-02.jpg",
             "images/atitlan-03.jpg",
             "images/atitlan-04.jpg"
