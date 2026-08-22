@@ -109,91 +109,76 @@ streetmusic: {
         description:
             "Life around Lake Atitlán and the communities living on its shores.",
         photos: [
-         "images/atitlan-1.jpg",
-         "images/atitlan-2.jpg",
-         "images/atitlan-3.jpg",
-         "images/atitlan-4.jpg",
-         "images/atitlan-5.jpg",
-         "images/atitlan-6.jpg",
-         "images/atitlan-7.jpg",
-         "images/atitlan-8.jpg",
-         "images/atitlan-9.jpg",
-         "images/atitlan-10.jpg",
-         "images/atitlan-11.jpg",
-         "images/atitlan-12.jpg",
-         "images/atitlan-13.jpg",
-         "images/atitlan-14.jpg",
-         "images/atitlan-15.jpg",
-         "images/atitlan-16.jpg",
-         "images/atitlan-17.jpg",
-         "images/atitlan-18.jpg",
-         "images/atitlan-19.jpg",
-         "images/atitlan-20.jpg",
-         "images/atitlan-21.jpg",
-         "images/atitlan-22.jpg",
-         "images/atitlan-23.jpg",
-         "images/atitlan-24.jpg",
-         "images/atitlan-25.jpg",
-         "images/atitlan-26.jpg",
-         "images/atitlan-27.jpg",
-         "images/atitlan-28.jpg",
-         "images/atitlan-29.jpg",
-         "images/atitlan-30.jpg",
-         "images/atitlan-31.jpg",
-         "images/atitlan-32.jpg",
-         "images/atitlan-33.jpg",
-         "images/atitlan-34.jpg",
-         "images/atitlan-35.jpg",
-         "images/atitlan-36.jpg",
-         "images/atitlan-37.jpg",
-         "images/atitlan-38.jpg",
-         "images/atitlan-39.jpg",
-         "images/atitlan-40.jpg",
-         "images/atitlan-41.jpg"
+            "images/atitlan-1.jpg",
+            "images/atitlan-2.jpg",
+            "images/atitlan-3.jpg",
+            "images/atitlan-4.jpg",
+            "images/atitlan-5.jpg",
+            "images/atitlan-6.jpg",
+            "images/atitlan-7.jpg",
+            "images/atitlan-8.jpg",
+            "images/atitlan-9.jpg",
+            "images/atitlan-10.jpg",
+            "images/atitlan-11.jpg",
+            "images/atitlan-12.jpg",
+            "images/atitlan-13.jpg",
+            "images/atitlan-14.jpg",
+            "images/atitlan-15.jpg",
+            "images/atitlan-16.jpg",
+            "images/atitlan-17.jpg",
+            "images/atitlan-18.jpg",
+            "images/atitlan-19.jpg",
+            "images/atitlan-20.jpg",
+            "images/atitlan-21.jpg",
+            "images/atitlan-22.jpg",
+            "images/atitlan-23.jpg",
+            "images/atitlan-24.jpg",
+            "images/atitlan-25.jpg",
+            "images/atitlan-26.jpg",
+            "images/atitlan-27.jpg",
+            "images/atitlan-28.jpg",
+            "images/atitlan-29.jpg",
+            "images/atitlan-30.jpg",
+            "images/atitlan-31.jpg",
+            "images/atitlan-32.jpg",
+            "images/atitlan-33.jpg",
+            "images/atitlan-34.jpg",
+            "images/atitlan-35.jpg",
+            "images/atitlan-36.jpg",
+            "images/atitlan-37.jpg",
+            "images/atitlan-38.jpg",
+            "images/atitlan-39.jpg",
+            "images/atitlan-40.jpg",
+            "images/atitlan-41.jpg"
         ]
-
     },
 
 
     tajumulco: {
-
         country: "Guatemala",
-
         name: "Tajumulco",
-
         description:
             "A journey to Tajumulco, the highest point in Guatemala.",
-
         photos: [
-
             "images/tajumulco-1.jpg",
             "images/tajumulco-2.jpg",
             "images/tajumulco-3.jpg",
             "images/tajumulco-4.jpg"
-
         ]
-
     },
 
 
     "guatemala-street": {
-
         country: "Guatemala",
-
         name: "Street",
-
         description:
             "People, streets and everyday moments observed across Guatemala.",
-
         photos: [
-
             "images/guatemala-street-1.jpg",
             "images/guatemala-street-2.jpg",
             "images/guatemala-street-3.jpg",
             "images/guatemala-street-4.jpg"
-
         ]
-
     }
 
 };
