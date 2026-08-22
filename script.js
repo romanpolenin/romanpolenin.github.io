@@ -90,6 +90,8 @@ const nextButton =
     document.getElementById("next");
 const aboutButton =
     document.getElementById("about-button");
+const nameLink =
+    document.querySelector(".name");
 const about =
     document.getElementById("about");
 const aboutClose =
@@ -403,6 +405,18 @@ aboutButton.addEventListener(
         about.classList.add(
             "open"
         );
+    }
+);
+nameLink.addEventListener(
+    "click",
+    event => {
+
+        event.preventDefault();
+
+        about.classList.add(
+            "open"
+        );
+
     }
 );
 aboutClose.addEventListener(
