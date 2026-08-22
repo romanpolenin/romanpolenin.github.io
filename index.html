@@ -19,7 +19,6 @@
          LEFT SIDEBAR
          ========================= -->
     <aside class="sidebar">
-        <!-- NAME -->
         <div class="identity">
             <a href="#" class="name">
                 ROMAN POLENIN
@@ -35,48 +34,31 @@
                 class="project active"
                 data-project="atitlan"
             >
-                <span>
-                    Lake Atitlán
-                </span>
-                <span>
-                    2026
-                </span>
+                <span>Lake Atitlán</span>
+                <span>2026</span>
             </button>
             <button
                 class="project"
                 data-project="mexico"
             >
-                <span>
-                    Mexico
-                </span>
-                <span>
-                    2026
-                </span>
+                <span>Mexico</span>
+                <span>2026</span>
             </button>
             <button
                 class="project"
                 data-project="portraits"
             >
-                <span>
-                    Portraits
-                </span>
-                <span>
-                    2026
-                </span>
+                <span>Portraits</span>
+                <span>2026</span>
             </button>
             <button
                 class="project"
                 data-project="street"
             >
-                <span>
-                    Street Musicians
-                </span>
-                <span>
-                    2025
-                </span>
+                <span>Street Musicians</span>
+                <span>2025</span>
             </button>
         </nav>
-        <!-- BOTTOM -->
         <div class="bottom">
             <button id="about-button">
                 About
@@ -84,23 +66,38 @@
         </div>
     </aside>
     <!-- =========================
-         RIGHT CONTENT
+         GALLERY
          ========================= -->
-    <main class="content">
-        <!-- PROJECT HEADER -->
-        <div class="project-header">
+    <main class="gallery">
+        <!-- TOP INFO -->
+        <div class="gallery-header">
             <span id="project-name">
                 Lake Atitlán
             </span>
-            <span id="project-count">
-                0 photographs
+            <span id="counter">
+                01 / 04
             </span>
         </div>
-        <!-- GALLERY -->
+        <!-- SLIDES -->
         <div
-            id="gallery"
-            class="gallery"
+            id="slides"
+            class="slides"
         ></div>
+        <!-- ARROWS -->
+        <button
+            id="prev"
+            class="arrow arrow-left"
+            aria-label="Previous photograph"
+        >
+            ←
+        </button>
+        <button
+            id="next"
+            class="arrow arrow-right"
+            aria-label="Next photograph"
+        >
+            →
+        </button>
     </main>
     <!-- =========================
          ABOUT
