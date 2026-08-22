@@ -1,95 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
     <title>Roman Polenin — Photographer</title>
-
+    <meta
+        name="description"
+        content="Roman Polenin — documentary photographer working in Latin America."
+    >
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
 <div class="site">
-
-    <!-- LEFT -->
-
+    <!-- =========================
+         LEFT SIDEBAR
+         ========================= -->
     <aside class="sidebar">
-
-        <div>
-            <a href="#" class="name">ROMAN POLENIN</a>
-
+        <!-- NAME -->
+        <div class="identity">
+            <a href="#" class="name">
+                ROMAN POLENIN
+            </a>
             <p class="description">
                 Photographer<br>
                 Documentary · Portrait · Travel
             </p>
         </div>
-
-
+        <!-- PROJECTS -->
         <nav class="projects">
-
-            <button class="project active" data-project="atitlan">
-                <span>Lake Atitlán</span>
-                <span>2026</span>
+            <button
+                class="project active"
+                data-project="atitlan"
+            >
+                <span>
+                    Lake Atitlán
+                </span>
+                <span>
+                    2026
+                </span>
             </button>
-
-            <button class="project" data-project="mexico">
-                <span>Mexico</span>
-                <span>2026</span>
+            <button
+                class="project"
+                data-project="mexico"
+            >
+                <span>
+                    Mexico
+                </span>
+                <span>
+                    2026
+                </span>
             </button>
-
-            <button class="project" data-project="portraits">
-                <span>Portraits</span>
-                <span>2026</span>
+            <button
+                class="project"
+                data-project="portraits"
+            >
+                <span>
+                    Portraits
+                </span>
+                <span>
+                    2026
+                </span>
             </button>
-
-            <button class="project" data-project="street">
-                <span>Street Musicians</span>
-                <span>2025</span>
+            <button
+                class="project"
+                data-project="street"
+            >
+                <span>
+                    Street Musicians
+                </span>
+                <span>
+                    2025
+                </span>
             </button>
-
         </nav>
-
-
+        <!-- BOTTOM -->
         <div class="bottom">
-
-    <button id="about-button">
-        About
-    </button>
-
-</div>
-
+            <button id="about-button">
+                About
+            </button>
+        </div>
     </aside>
-
-
-    <!-- RIGHT -->
-
+    <!-- =========================
+         RIGHT CONTENT
+         ========================= -->
     <main class="content">
-
+        <!-- PROJECT HEADER -->
         <div class="project-header">
-
             <span id="project-name">
                 Lake Atitlán
             </span>
-
             <span id="project-count">
-                4 photographs
+                0 photographs
             </span>
-
         </div>
-
-
-        <div id="gallery" class="gallery">
-        </div>
-
+        <!-- GALLERY -->
+        <div
+            id="gallery"
+            class="gallery"
+        ></div>
     </main>
-
+    <!-- =========================
+         ABOUT
+         ========================= -->
+    <section
+        id="about"
+        class="about"
+    >
+        <button
+            id="about-close"
+            class="about-close"
+            aria-label="Close"
+        >
+            ×
+        </button>
+        <div class="about-content">
+            <h2>
+                About
+            </h2>
+            <p>
+                Roman Polenin is a photographer
+                working between documentary,
+                portrait and travel photography.
+            </p>
+            <p>
+                Currently working in Latin America.
+            </p>
+            <div class="contact">
+                <a href="mailto:Polenin.roma@hotmail.com">
+                    Polenin.roma@hotmail.com
+                </a>
+                <a
+                    href="https://instagram.com/romanpolenin"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Instagram
+                </a>
+            </div>
+        </div>
+    </section>
 </div>
-
-
 <script src="script.js"></script>
-
 </body>
 </html>
