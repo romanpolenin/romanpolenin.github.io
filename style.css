@@ -8,229 +8,303 @@ html {
 
 body {
     margin: 0;
-    background: #ffffff;
-    color: #111111;
+
+    background: #fff;
+    color: #111;
+
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   LAYOUT
+   ========================= */
+
+.site {
+    display: grid;
+
+    grid-template-columns: 280px 1fr;
+
+    min-height: 100vh;
+}
+
+
+/* =========================
+   SIDEBAR
+   ========================= */
+
+.sidebar {
+    position: fixed;
+
+    left: 0;
+    top: 0;
+
+    width: 280px;
+    height: 100vh;
+
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    border-right: 1px solid #e8e8e8;
+
+    background: #fff;
+}
+
+
+.name {
+    display: inline-block;
+
+    color: #111;
+    text-decoration: none;
+
+    font-size: 13px;
+
+    letter-spacing: 0.08em;
+}
+
+
+.description {
+    margin-top: 25px;
+
+    color: #777;
+
     line-height: 1.5;
 }
 
 
-/* HEADER */
+/* =========================
+   PROJECTS
+   ========================= */
 
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
+.projects {
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+
+.project {
     width: 100%;
 
     display: flex;
     justify-content: space-between;
-    align-items: center;
 
-    padding: 22px 30px;
+    padding: 5px 0;
 
-    background: rgba(255,255,255,0.94);
-    z-index: 100;
-}
+    border: none;
+    background: none;
 
-.logo {
-    color: #111;
-    text-decoration: none;
+    color: #999;
+
+    font-family: inherit;
     font-size: 13px;
-    letter-spacing: 0.08em;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: color 0.2s ease;
 }
 
-nav {
+
+.project:hover {
+    color: #111;
+}
+
+
+.project.active {
+    color: #111;
+}
+
+
+.project span:last-child {
+    color: #bbb;
+}
+
+
+/* =========================
+   BOTTOM
+   ========================= */
+
+.bottom {
     display: flex;
-    gap: 25px;
+    flex-direction: column;
+
+    gap: 7px;
 }
 
-nav a {
-    color: #111;
+
+.bottom a {
+    color: #777;
+
     text-decoration: none;
-    font-size: 13px;
-}
-
-nav a:hover {
-    opacity: 0.5;
 }
 
 
-/* INTRO */
+.bottom a:hover {
+    color: #111;
+}
 
-.intro {
-    min-height: 75vh;
+
+/* =========================
+   RIGHT CONTENT
+   ========================= */
+
+.content {
+    grid-column: 2;
+
+    min-width: 0;
+
+    padding: 25px 30px 100px;
+}
+
+
+/* =========================
+   PROJECT HEADER
+   ========================= */
+
+.project-header {
+    position: sticky;
+
+    top: 0;
+
+    height: 45px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    background: #fff;
+
+    z-index: 10;
+}
+
+
+#project-count {
+    color: #999;
+}
+
+
+/* =========================
+   GALLERY
+   ========================= */
+
+.gallery {
+    width: 100%;
 
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
 
-    padding: 30px;
-    padding-bottom: 70px;
-}
-
-.intro h1 {
-    margin: 0 0 10px;
-
-    font-size: clamp(45px, 8vw, 110px);
-    font-weight: 400;
-    letter-spacing: -0.04em;
-}
-
-.intro p {
-    margin: 0;
-    max-width: 400px;
-    color: #666;
+    gap: 100px;
 }
 
 
-/* WORK */
-
-.work {
-    padding: 0 30px;
-}
-
-.project {
-    display: block;
-
-    margin-bottom: 100px;
-
-    color: #111;
-    text-decoration: none;
-}
-
-.project img {
-    display: block;
-
+.photo {
     width: 100%;
+
+    display: flex;
+    justify-content: center;
+}
+
+
+.photo img {
+    display: block;
+
+    max-width: 100%;
+    max-height: 90vh;
+
+    width: auto;
     height: auto;
 
-    transition: opacity 0.3s ease;
+    object-fit: contain;
 }
 
-.project:hover img {
-    opacity: 0.85;
-}
 
-.project-title {
+/* =========================
+   PHOTO NUMBER
+   ========================= */
+
+.photo-info {
+    width: 100%;
+
     display: flex;
     justify-content: space-between;
 
-    padding-top: 10px;
+    margin-top: 10px;
 
-    font-size: 13px;
+    color: #999;
+
+    font-size: 11px;
 }
 
 
-/* ABOUT */
-
-.about {
-    max-width: 900px;
-
-    margin: 180px 30px;
-
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 50px;
-}
-
-h2 {
-    margin: 0;
-
-    font-size: 13px;
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-}
-
-.about-text {
-    max-width: 600px;
-
-    font-size: 20px;
-    line-height: 1.45;
-}
-
-.about-text p {
-    margin-top: 0;
-    margin-bottom: 30px;
-}
-
-
-/* CONTACT */
-
-.contact {
-    margin: 180px 30px 120px;
-}
-
-.contact p {
-    margin: 8px 0;
-}
-
-.contact a {
-    color: #111;
-    text-decoration: none;
-}
-
-.contact a:hover {
-    opacity: 0.5;
-}
-
-
-/* FOOTER */
-
-footer {
-    padding: 30px;
-
-    border-top: 1px solid #eee;
-
-    font-size: 12px;
-    color: #777;
-}
-
-
-/* MOBILE */
+/* =========================
+   MOBILE
+   ========================= */
 
 @media (max-width: 700px) {
 
-    .header {
-        padding: 18px;
-    }
-
-    nav {
-        gap: 15px;
-    }
-
-    .intro {
-        min-height: 70vh;
-        padding: 18px;
-        padding-bottom: 50px;
-    }
-
-    .work {
-        padding: 0 18px;
-    }
-
-    .project {
-        margin-bottom: 70px;
-    }
-
-    .about {
+    .site {
         display: block;
-
-        margin: 120px 18px;
     }
 
-    .about-text {
-        margin-top: 30px;
-        font-size: 18px;
-    }
 
-    .contact {
-        margin: 120px 18px 80px;
-    }
+    .sidebar {
+        position: relative;
 
-    footer {
+        width: 100%;
+        height: auto;
+
         padding: 18px;
+
+        border-right: none;
+        border-bottom: 1px solid #e8e8e8;
     }
+
+
+    .description {
+        margin-top: 15px;
+        margin-bottom: 30px;
+    }
+
+
+    .projects {
+        margin-bottom: 30px;
+    }
+
+
+    .bottom {
+        flex-direction: row;
+
+        gap: 20px;
+    }
+
+
+    .content {
+        padding: 18px 18px 80px;
+    }
+
+
+    .project-header {
+        height: 40px;
+    }
+
+
+    .gallery {
+        gap: 60px;
+    }
+
+
+    .photo img {
+        max-height: none;
+
+        width: 100%;
+    }
+
 }
