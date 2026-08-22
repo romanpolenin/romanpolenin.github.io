@@ -62,10 +62,25 @@ const aboutClose =
    ========================= */
 let currentProject = "atitlan";
 let currentSlide = 0;
+let isChanging = false;
+/* =========================
+   PRELOAD IMAGE
+   ========================= */
+function preloadImage(src) {
+    return new Promise(
+        (resolve, reject) => {
+            const image =
+                new Image();
+            image.onload = resolve;
+            image.onerror = reject;
+            image.src = src;
+        }
+    );
+}
 /* =========================
    SHOW PROJECT
    ========================= */
-function showProject(projectId) {
+async function showProject(projectId) {
     const project =
         projects[projectId];
     if (!project) {
@@ -77,7 +92,7 @@ function showProject(projectId) {
     projectName.textContent =
         project.name;
     /*
-        Clear old slides
+        Clear gallery
     */
     slidesContainer.innerHTML = "";
     /*
@@ -96,21 +111,20 @@ function showProject(projectId) {
             }
             const image =
                 document.createElement("img");
-            image.src = photo;
+            image.src =
+                photo;
             image.alt =
                 project.name +
                 " — photograph " +
                 (index + 1);
-            /*
-                First image loads immediately.
-                Others load lazily.
-            */
-            image.loading =
-                index === 0
-                    ? "eager"
-                    : "lazy";
-            slide.appendChild(image);
-            slidesContainer.appendChild(slide);
+            image.draggable =
+                false;
+            slide.appendChild(
+                image
+            );
+            slidesContainer.appendChild(
+                slide
+            );
         }
     );
     updateCounter();
@@ -142,7 +156,10 @@ function showProject(projectId) {
 /* =========================
    SHOW SLIDE
    ========================= */
-function showSlide(index) {
+async function showSlide(index) {
+    if (isChanging) {
+        return;
+    }
     const slides =
         document.querySelectorAll(
             ".slide"
@@ -150,37 +167,65 @@ function showSlide(index) {
     if (slides.length === 0) {
         return;
     }
+    let newIndex = index;
     /*
-        Loop around
+        Loop
     */
-    if (index < 0) {
-        currentSlide =
+    if (newIndex < 0) {
+        newIndex =
             slides.length - 1;
     }
-    else if (
-        index >= slides.length
+    if (
+        newIndex >= slides.length
     ) {
-        currentSlide = 0;
+        newIndex = 0;
     }
-    else {
-        currentSlide = index;
+    /*
+        Same slide
+    */
+    if (
+        newIndex === currentSlide
+    ) {
+        return;
+    }
+    isChanging = true;
+    /*
+        Load image first
+    */
+    const project =
+        projects[currentProject];
+    try {
+        await preloadImage(
+            project.photos[newIndex]
+        );
+    }
+    catch {
+        isChanging = false;
+        return;
     }
     /*
         Remove active
     */
-    slides.forEach(
-        slide => {
-            slide.classList.remove(
-                "active"
-            );
-        }
-    );
+    slides[currentSlide]
+        .classList.remove("active");
     /*
-        Show current
+        New slide
     */
+    currentSlide =
+        newIndex;
     slides[currentSlide]
         .classList.add("active");
     updateCounter();
+    /*
+        Small delay prevents
+        accidental double click
+    */
+    setTimeout(
+        () => {
+            isChanging = false;
+        },
+        400
+    );
 }
 /* =========================
    NEXT
@@ -213,7 +258,9 @@ function updateCounter() {
             project.photos.length
         ).padStart(2, "0");
     counter.textContent =
-        current + " / " + total;
+        current +
+        " / " +
+        total;
 }
 /* =========================
    PROJECT BUTTONS
@@ -247,15 +294,18 @@ previousButton.addEventListener(
 document.addEventListener(
     "keydown",
     event => {
-        /*
-            Don't change slides
-            while About is open.
-        */
         if (
             about.classList.contains(
                 "open"
             )
         ) {
+            if (
+                event.key === "Escape"
+            ) {
+                about.classList.remove(
+                    "open"
+                );
+            }
             return;
         }
         if (
@@ -279,7 +329,8 @@ slidesContainer.addEventListener(
     "touchstart",
     event => {
         touchStartX =
-            event.changedTouches[0].screenX;
+            event.changedTouches[0]
+                .screenX;
     },
     { passive: true }
 );
@@ -287,12 +338,11 @@ slidesContainer.addEventListener(
     "touchend",
     event => {
         touchEndX =
-            event.changedTouches[0].screenX;
+            event.changedTouches[0]
+                .screenX;
         const distance =
-            touchEndX - touchStartX;
-        /*
-            Minimum swipe distance
-        */
+            touchEndX -
+            touchStartX;
         if (
             Math.abs(distance) < 50
         ) {
@@ -324,21 +374,6 @@ aboutClose.addEventListener(
         about.classList.remove(
             "open"
         );
-    }
-);
-/* =========================
-   ESC
-   ========================= */
-document.addEventListener(
-    "keydown",
-    event => {
-        if (
-            event.key === "Escape"
-        ) {
-            about.classList.remove(
-                "open"
-            );
-        }
     }
 );
 /* =========================
