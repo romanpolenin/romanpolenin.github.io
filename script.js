@@ -39,20 +39,29 @@ const projects = {
 /* =========================
    ELEMENTS
    ========================= */
-const gallery =
-    document.getElementById("gallery");
+const slidesContainer =
+    document.getElementById("slides");
 const projectName =
     document.getElementById("project-name");
-const projectCount =
-    document.getElementById("project-count");
+const counter =
+    document.getElementById("counter");
 const projectButtons =
     document.querySelectorAll(".project");
+const previousButton =
+    document.getElementById("prev");
+const nextButton =
+    document.getElementById("next");
 const aboutButton =
     document.getElementById("about-button");
 const about =
     document.getElementById("about");
 const aboutClose =
     document.getElementById("about-close");
+/* =========================
+   STATE
+   ========================= */
+let currentProject = "atitlan";
+let currentSlide = 0;
 /* =========================
    SHOW PROJECT
    ========================= */
@@ -62,72 +71,52 @@ function showProject(projectId) {
     if (!project) {
         return;
     }
-    /* Project name */
+    currentProject =
+        projectId;
+    currentSlide = 0;
     projectName.textContent =
         project.name;
-    /* Number of photographs */
-    const number =
-        project.photos.length;
-    projectCount.textContent =
-        number +
-        (number === 1
-            ? " photograph"
-            : " photographs");
-    /* Clear gallery */
-    gallery.innerHTML = "";
-    /* Create photos */
+    /*
+        Clear old slides
+    */
+    slidesContainer.innerHTML = "";
+    /*
+        Create slides
+    */
     project.photos.forEach(
         (photo, index) => {
-            const photoContainer =
+            const slide =
                 document.createElement("div");
-            photoContainer.className =
-                "photo";
-            /* Image */
-            const img =
+            slide.className =
+                "slide";
+            if (index === 0) {
+                slide.classList.add(
+                    "active"
+                );
+            }
+            const image =
                 document.createElement("img");
-            img.src = photo;
-            img.alt =
+            image.src = photo;
+            image.alt =
                 project.name +
                 " — photograph " +
                 (index + 1);
-            img.loading =
+            /*
+                First image loads immediately.
+                Others load lazily.
+            */
+            image.loading =
                 index === 0
                     ? "eager"
                     : "lazy";
-            /* Information */
-            const info =
-                document.createElement("div");
-            info.className =
-                "photo-info";
-            const numberElement =
-                document.createElement("span");
-            numberElement.textContent =
-                String(index + 1)
-                    .padStart(2, "0");
-            const totalElement =
-                document.createElement("span");
-            totalElement.textContent =
-                String(number)
-                    .padStart(2, "0");
-            info.appendChild(
-                numberElement
-            );
-            info.appendChild(
-                totalElement
-            );
-            /* Add to page */
-            photoContainer.appendChild(
-                img
-            );
-            photoContainer.appendChild(
-                info
-            );
-            gallery.appendChild(
-                photoContainer
-            );
+            slide.appendChild(image);
+            slidesContainer.appendChild(slide);
         }
     );
-    /* Active project */
+    updateCounter();
+    /*
+        Active project
+    */
     projectButtons.forEach(
         button => {
             button.classList.remove(
@@ -143,15 +132,88 @@ function showProject(projectId) {
             }
         }
     );
-    /* Close About */
+    /*
+        Close About
+    */
     about.classList.remove(
         "open"
     );
-    /* Return to top */
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
+}
+/* =========================
+   SHOW SLIDE
+   ========================= */
+function showSlide(index) {
+    const slides =
+        document.querySelectorAll(
+            ".slide"
+        );
+    if (slides.length === 0) {
+        return;
+    }
+    /*
+        Loop around
+    */
+    if (index < 0) {
+        currentSlide =
+            slides.length - 1;
+    }
+    else if (
+        index >= slides.length
+    ) {
+        currentSlide = 0;
+    }
+    else {
+        currentSlide = index;
+    }
+    /*
+        Remove active
+    */
+    slides.forEach(
+        slide => {
+            slide.classList.remove(
+                "active"
+            );
+        }
+    );
+    /*
+        Show current
+    */
+    slides[currentSlide]
+        .classList.add("active");
+    updateCounter();
+}
+/* =========================
+   NEXT
+   ========================= */
+function nextSlide() {
+    showSlide(
+        currentSlide + 1
+    );
+}
+/* =========================
+   PREVIOUS
+   ========================= */
+function previousSlide() {
+    showSlide(
+        currentSlide - 1
+    );
+}
+/* =========================
+   COUNTER
+   ========================= */
+function updateCounter() {
+    const project =
+        projects[currentProject];
+    const current =
+        String(
+            currentSlide + 1
+        ).padStart(2, "0");
+    const total =
+        String(
+            project.photos.length
+        ).padStart(2, "0");
+    counter.textContent =
+        current + " / " + total;
 }
 /* =========================
    PROJECT BUTTONS
@@ -169,7 +231,84 @@ projectButtons.forEach(
     }
 );
 /* =========================
-   ABOUT OPEN
+   ARROWS
+   ========================= */
+nextButton.addEventListener(
+    "click",
+    nextSlide
+);
+previousButton.addEventListener(
+    "click",
+    previousSlide
+);
+/* =========================
+   KEYBOARD
+   ========================= */
+document.addEventListener(
+    "keydown",
+    event => {
+        /*
+            Don't change slides
+            while About is open.
+        */
+        if (
+            about.classList.contains(
+                "open"
+            )
+        ) {
+            return;
+        }
+        if (
+            event.key === "ArrowRight"
+        ) {
+            nextSlide();
+        }
+        if (
+            event.key === "ArrowLeft"
+        ) {
+            previousSlide();
+        }
+    }
+);
+/* =========================
+   TOUCH / SWIPE
+   ========================= */
+let touchStartX = 0;
+let touchEndX = 0;
+slidesContainer.addEventListener(
+    "touchstart",
+    event => {
+        touchStartX =
+            event.changedTouches[0].screenX;
+    },
+    { passive: true }
+);
+slidesContainer.addEventListener(
+    "touchend",
+    event => {
+        touchEndX =
+            event.changedTouches[0].screenX;
+        const distance =
+            touchEndX - touchStartX;
+        /*
+            Minimum swipe distance
+        */
+        if (
+            Math.abs(distance) < 50
+        ) {
+            return;
+        }
+        if (distance < 0) {
+            nextSlide();
+        }
+        else {
+            previousSlide();
+        }
+    },
+    { passive: true }
+);
+/* =========================
+   ABOUT
    ========================= */
 aboutButton.addEventListener(
     "click",
@@ -179,9 +318,6 @@ aboutButton.addEventListener(
         );
     }
 );
-/* =========================
-   ABOUT CLOSE
-   ========================= */
 aboutClose.addEventListener(
     "click",
     () => {
@@ -191,7 +327,7 @@ aboutClose.addEventListener(
     }
 );
 /* =========================
-   ESCAPE CLOSES ABOUT
+   ESC
    ========================= */
 document.addEventListener(
     "keydown",
@@ -206,6 +342,6 @@ document.addEventListener(
     }
 );
 /* =========================
-   INITIAL PROJECT
+   INITIALIZE
    ========================= */
 showProject("atitlan");
