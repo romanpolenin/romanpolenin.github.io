@@ -1,89 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta
         name="viewport"
         content="width=device-width, initial-scale=1.0"
     >
+
     <title>Roman Polenin — Photographer</title>
+
     <meta
         name="description"
-        content="Roman Polenin — documentary photographer working in Latin America."
+        content="Roman Polenin — documentary photographer."
     >
+
     <link rel="stylesheet" href="style.css">
+
 </head>
+
+
 <body>
+
+
 <div class="site">
+
+
     <!-- =========================
-         LEFT SIDEBAR
+         SIDEBAR
          ========================= -->
+
     <aside class="sidebar">
+
+
         <div class="identity">
+
             <a href="#" class="name">
                 ROMAN POLENIN
             </a>
+
             <p class="description">
                 Photographer<br>
                 Documentary · Portrait · Travel
             </p>
+
         </div>
-        <!-- PROJECTS -->
+
+
+
+        <!-- =========================
+             PROJECT MENU
+             ========================= -->
+
         <nav class="projects">
-            <button
-                class="project active"
-                data-project="atitlan"
-            >
-                <span>Lake Atitlán</span>
-                <span>2026</span>
-            </button>
-            <button
-                class="project"
-                data-project="mexico"
-            >
-                <span>Mexico</span>
-                <span>2026</span>
-            </button>
-            <button
-                class="project"
-                data-project="portraits"
-            >
-                <span>Portraits</span>
-                <span>2026</span>
-            </button>
-            <button
-                class="project"
-                data-project="street"
-            >
-                <span>Street Musicians</span>
-                <span>2025</span>
-            </button>
+
+
+            <!-- MEXICO -->
+
+            <div class="country">
+
+                <button
+                    class="country-title"
+                    data-country="mexico"
+                >
+                    MEXICO
+                </button>
+
+
+                <div
+                    class="country-projects open"
+                    id="mexico-projects"
+                >
+
+                    <button
+                        class="project active"
+                        data-project="zapatista"
+                    >
+                        <span>Zapatista</span>
+                    </button>
+
+
+                    <button
+                        class="project"
+                        data-project="orizaba"
+                    >
+                        <span>Pico de Orizaba</span>
+                    </button>
+
+
+                    <button
+                        class="project"
+                        data-project="mexico-street"
+                    >
+                        <span>Street</span>
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- GUATEMALA -->
+
+            <div class="country">
+
+                <button
+                    class="country-title"
+                    data-country="guatemala"
+                >
+                    GUATEMALA
+                </button>
+
+
+                <div
+                    class="country-projects open"
+                    id="guatemala-projects"
+                >
+
+                    <button
+                        class="project"
+                        data-project="atitlan"
+                    >
+                        <span>Atitlán</span>
+                    </button>
+
+
+                    <button
+                        class="project"
+                        data-project="tajumulco"
+                    >
+                        <span>Tajumulco</span>
+                    </button>
+
+
+                    <button
+                        class="project"
+                        data-project="guatemala-street"
+                    >
+                        <span>Street</span>
+                    </button>
+
+                </div>
+
+            </div>
+
+
         </nav>
+
+
+
+        <!-- =========================
+             ABOUT
+             ========================= -->
+
         <div class="bottom">
+
             <button id="about-button">
                 About
             </button>
+
         </div>
+
+
     </aside>
+
+
+
     <!-- =========================
          GALLERY
          ========================= -->
+
     <main class="gallery">
-        <!-- TOP INFO -->
+
+
         <div class="gallery-header">
-            <span id="project-name">
-                Lake Atitlán
-            </span>
+
+            <div>
+
+                <div
+                    id="project-name"
+                    class="project-name"
+                >
+                    Zapatista
+                </div>
+
+
+                <div
+                    id="project-description"
+                    class="project-description"
+                >
+                    Documentary project about the Zapatista
+                    communities in Chiapas.
+                </div>
+
+            </div>
+
+
             <span id="counter">
                 01 / 04
             </span>
+
         </div>
+
+
+
         <!-- SLIDES -->
+
         <div
             id="slides"
             class="slides"
         ></div>
+
+
+
         <!-- ARROWS -->
+
         <button
             id="prev"
             class="arrow arrow-left"
@@ -91,6 +225,8 @@
         >
             ←
         </button>
+
+
         <button
             id="next"
             class="arrow arrow-right"
@@ -98,14 +234,21 @@
         >
             →
         </button>
+
+
     </main>
+
+
+
     <!-- =========================
          ABOUT
          ========================= -->
+
     <section
         id="about"
         class="about"
     >
+
         <button
             id="about-close"
             class="about-close"
@@ -113,22 +256,34 @@
         >
             ×
         </button>
+
+
         <div class="about-content">
+
             <h2>
                 About
             </h2>
+
+
             <p>
                 Roman Polenin is a photographer
                 working between documentary,
                 portrait and travel photography.
             </p>
+
+
             <p>
                 Currently working in Latin America.
             </p>
+
+
             <div class="contact">
+
                 <a href="mailto:Polenin.roma@hotmail.com">
                     Polenin.roma@hotmail.com
                 </a>
+
+
                 <a
                     href="https://instagram.com/romanpolenin"
                     target="_blank"
@@ -136,10 +291,20 @@
                 >
                     Instagram
                 </a>
+
             </div>
+
         </div>
+
     </section>
+
+
 </div>
+
+
 <script src="script.js"></script>
+
+
 </body>
+
 </html>
