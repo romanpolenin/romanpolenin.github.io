@@ -10,21 +10,48 @@ const projects = {
        ===================== */
 
     zapatista: {
-
         country: "Mexico",
-
         name: "Zapatista",
-
         description:
             "Documentary project about the Zapatista communities in Chiapas.",
-
-        photos: [
-            "images/zapatista-1.jpg",
-            "images/zapatista-2.jpg",
-            "images/zapatista-3.jpg",
-            "images/zapatista-4.jpg"
-        ]
-
+photos: [
+    "images/zapatista-1.jpg",
+    "images/zapatista-2.jpg",
+    "images/zapatista-3.jpg",
+    "images/zapatista-4.jpg",
+    "images/zapatista-5.jpg",
+    "images/zapatista-6.jpg",
+    "images/zapatista-7.jpg",
+    "images/zapatista-8.jpg",
+    "images/zapatista-9.jpg",
+    "images/zapatista-10.jpg",
+    "images/zapatista-11.jpg",
+    "images/zapatista-12.jpg",
+    "images/zapatista-13.jpg",
+    "images/zapatista-14.jpg",
+    "images/zapatista-15.jpg",
+    "images/zapatista-16.jpg",
+    "images/zapatista-17.jpg",
+    "images/zapatista-18.jpg",
+    "images/zapatista-19.jpg",
+    "images/zapatista-20.jpg",
+    "images/zapatista-21.jpg",
+    "images/zapatista-22.jpg",
+    "images/zapatista-23.jpg",
+    "images/zapatista-24.jpg",
+    "images/zapatista-25.jpg",
+    "images/zapatista-26.jpg",
+    "images/zapatista-27.jpg",
+    "images/zapatista-28.jpg",
+    "images/zapatista-29.jpg",
+    "images/zapatista-30.jpg",
+    "images/zapatista-31.jpg",
+    "images/zapatista-32.jpg",
+    "images/zapatista-33.jpg",
+    "images/zapatista-34.jpg",
+    "images/zapatista-35.jpg",
+    "images/zapatista-36.jpg"
+]
     },
 
 
