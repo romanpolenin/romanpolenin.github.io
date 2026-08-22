@@ -115,7 +115,9 @@ mannequin: {
     ]
 
 },
-   street-music: {
+
+   
+streetmusic: {
     name: "Street Music",
     description:
         "Street musicians and performers encountered across Latin America.",
