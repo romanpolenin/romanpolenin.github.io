@@ -200,7 +200,7 @@ streetmusic: {
         country: "Guatemala",
         name: "Tajumulco and Santa Maria",
         description:
-            "A trek to Tajumulco and Santa Maria mountains.",
+            "A trek to Tajumulco and Santa Maria volcanos.",
         photos: [
             "images/tajumulco-1.jpg",
             "images/tajumulco-2.jpg",
