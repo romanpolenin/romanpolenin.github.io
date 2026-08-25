@@ -59,7 +59,7 @@ photos: [
         country: "Mexico",
         name: "Pico de Orizaba",
         description:
-            "A journey toward Pico de Orizaba, the highest mountain in Mexico.",
+            "A trek to Pico de Orizaba.",
         photos: [
             "images/orizaba-1.jpg",
             "images/orizaba-2.jpg",
