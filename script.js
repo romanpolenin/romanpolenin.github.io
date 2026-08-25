@@ -205,7 +205,22 @@ streetmusic: {
             "images/tajumulco-1.jpg",
             "images/tajumulco-2.jpg",
             "images/tajumulco-3.jpg",
-            "images/tajumulco-4.jpg"
+            "images/tajumulco-4.jpg",
+            "images/tajumulco-5.jpg",
+            "images/tajumulco-6.jpg",
+            "images/tajumulco-7.jpg",
+            "images/tajumulco-8.jpg",
+            "images/tajumulco-9.jpg",
+            "images/tajumulco-10.jpg",
+            "images/tajumulco-11.jpg",
+            "images/tajumulco-12.jpg",
+            "images/tajumulco-13.jpg",
+            "images/tajumulco-14.jpg",
+            "images/tajumulco-15.jpg",
+            "images/tajumulco-16.jpg",
+            "images/tajumulco-17.jpg",
+            "images/tajumulco-18.jpg",
+            "images/tajumulco-19.jpg"
         ]
     },
 
