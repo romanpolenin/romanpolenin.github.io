@@ -198,9 +198,9 @@ streetmusic: {
 
     tajumulco: {
         country: "Guatemala",
-        name: "Tajumulco",
+        name: "Tajumulco and Santa Maria",
         description:
-            "A journey to Tajumulco, the highest point in Guatemala.",
+            "A trek to Tajumulco and Santa Maria mountains.",
         photos: [
             "images/tajumulco-1.jpg",
             "images/tajumulco-2.jpg",
