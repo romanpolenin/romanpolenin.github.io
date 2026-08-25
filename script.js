@@ -105,7 +105,7 @@ sombrero: {
     country: "Projects",
     name: "Sombrero",
     description:
-        "A photographic study of the sombrero as an object, symbol and part of everyday life.",
+        "",
     photos: [
         "images/sombrero-1.jpg",
         "images/sombrero-2.jpg",
