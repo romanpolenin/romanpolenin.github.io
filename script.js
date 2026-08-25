@@ -64,7 +64,22 @@ photos: [
             "images/orizaba-1.jpg",
             "images/orizaba-2.jpg",
             "images/orizaba-3.jpg",
-            "images/orizaba-4.jpg"
+            "images/orizaba-4.jpg",
+            "images/orizaba-5.jpg",
+            "images/orizaba-6.jpg",
+            "images/orizaba-7.jpg",
+            "images/orizaba-8.jpg",
+            "images/orizaba-9.jpg",
+            "images/orizaba-10.jpg",
+            "images/orizaba-11.jpg",
+            "images/orizaba-12.jpg",
+            "images/orizaba-13.jpg",
+            "images/orizaba-14.jpg",
+            "images/orizaba-15.jpg",
+            "images/orizaba-16.jpg",
+            "images/orizaba-17.jpg",
+            "images/orizaba-18.jpg",
+            "images/orizaba-19.jpg"
         ]
     },
 
