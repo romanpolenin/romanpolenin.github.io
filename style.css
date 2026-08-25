@@ -551,10 +551,9 @@ body {
     opacity: 0.5;
 }
 
+
 /* =========================
-
    MOBILE
-
    ========================= */
 
 @media (max-width: 700px) {
@@ -562,19 +561,36 @@ body {
     html,
     body {
 
+        margin: 0;
+        padding: 0;
+
+        width: 100%;
+        height: auto;
+
+        min-height: 100%;
+
         overflow-x: hidden;
         overflow-y: auto;
 
+        -webkit-overflow-scrolling: touch;
+
     }
+
 
     .site {
 
         display: block;
 
+        width: 100%;
+
         height: auto;
+
         min-height: 100vh;
 
+        overflow: visible;
+
     }
+
 
     .sidebar {
 
@@ -590,6 +606,7 @@ body {
 
     }
 
+
     .description {
 
         margin-top: 15px;
@@ -597,6 +614,7 @@ body {
         margin-bottom: 25px;
 
     }
+
 
     .projects {
 
@@ -606,11 +624,19 @@ body {
 
     }
 
+
     .gallery {
 
-        height: calc(100vh - 300px);
+        width: 100%;
+
+        height: 100vh;
+
+        min-height: 100vh;
+
+        overflow: hidden;
 
     }
+
 
     .gallery-header {
 
@@ -622,11 +648,13 @@ body {
 
     }
 
+
     .project-description {
 
         max-width: 70vw;
 
     }
+
 
     .slide {
 
@@ -637,6 +665,7 @@ body {
 
     }
 
+
     .arrow {
 
         opacity: 1;
@@ -645,11 +674,13 @@ body {
 
     }
 
+
     .arrow-left {
 
         padding-left: 10px;
 
     }
+
 
     .arrow-right {
 
@@ -657,13 +688,19 @@ body {
 
     }
 
+
     .about {
 
         width: 100%;
 
         padding: 18px;
 
+        overflow-y: auto;
+
+        -webkit-overflow-scrolling: touch;
+
     }
+
 
     .about-close {
 
@@ -673,6 +710,7 @@ body {
 
     }
 
+
     .about-content {
 
         margin-top: 20vh;
@@ -680,6 +718,7 @@ body {
         margin-left: 0;
 
     }
+
 
     .about-content p {
 
