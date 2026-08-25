@@ -119,7 +119,7 @@ mannequin: {
     country: "Projects",
     name: "Mannequin",
     description:
-        "A study of mannequins, bodies and artificial representations of the human figure.",
+        "",
     photos: [
         "images/mannequin-1.jpg",
         "images/mannequin-2.jpg",
@@ -132,7 +132,7 @@ streetmusic: {
     country: "Projects",
     name: "Street Music",
     description:
-        "Street musicians and performers encountered across Latin America.",
+        "",
     photos: [
         "images/streetmusic-1.jpg",
         "images/streetmusic-2.jpg",
