@@ -8,7 +8,74 @@ const projects = {
     /* =====================
        MEXICO
        ===================== */
-
+   
+    "mexico-street": {
+        country: "Mexico",
+        name: "Street",
+        description:
+            "Fragments of everyday life and people encountered on the streets of Mexico.",
+        photos: [
+            "images/mexico-street-1.jpg",
+            "images/mexico-street-2.jpg",
+            "images/mexico-street-3.jpg",
+            "images/mexico-street-4.jpg",
+            "images/mexico-street-5.jpg",
+            "images/mexico-street-6.jpg",
+            "images/mexico-street-7.jpg",
+            "images/mexico-street-8.jpg",
+            "images/mexico-street-9.jpg",
+            "images/mexico-street-10.jpg",
+            "images/mexico-street-11.jpg",
+            "images/mexico-street-12.jpg",
+            "images/mexico-street-13.jpg",
+            "images/mexico-street-14.jpg",
+            "images/mexico-street-15.jpg",
+            "images/mexico-street-16.jpg",
+            "images/mexico-street-17.jpg",
+            "images/mexico-street-18.jpg",
+            "images/mexico-street-19.jpg",
+            "images/mexico-street-20.jpg",
+            "images/mexico-street-21.jpg",
+            "images/mexico-street-22.jpg",
+            "images/mexico-street-23.jpg",
+            "images/mexico-street-24.jpg",
+            "images/mexico-street-25.jpg",
+            "images/mexico-street-26.jpg",
+            "images/mexico-street-27.jpg",
+            "images/mexico-street-28.jpg",
+            "images/mexico-street-29.jpg",
+            "images/mexico-street-30.jpg",
+            "images/mexico-street-31.jpg",
+            "images/mexico-street-32.jpg",
+            "images/mexico-street-33.jpg",
+            "images/mexico-street-34.jpg",
+            "images/mexico-street-35.jpg",
+            "images/mexico-street-36.jpg",
+            "images/mexico-street-37.jpg",
+            "images/mexico-street-38.jpg",
+            "images/mexico-street-39.jpg",
+            "images/mexico-street-40.jpg",
+            "images/mexico-street-41.jpg",
+            "images/mexico-street-42.jpg",
+            "images/mexico-street-43.jpg",
+            "images/mexico-street-44.jpg",
+            "images/mexico-street-45.jpg",
+            "images/mexico-street-46.jpg",
+            "images/mexico-street-47.jpg",
+            "images/mexico-street-48.jpg",
+            "images/mexico-street-49.jpg",
+            "images/mexico-street-50.jpg",
+            "images/mexico-street-51.jpg",
+            "images/mexico-street-52.jpg",
+            "images/mexico-street-53.jpg",
+            "images/mexico-street-54.jpg",
+            "images/mexico-street-55.jpg",
+            "images/mexico-street-56.jpg",
+            "images/mexico-street-57.jpg",
+            "images/mexico-street-58.jpg"
+        ]
+    },
+   
     zapatista: {
         country: "Mexico",
         name: "Zapatista",
@@ -84,18 +151,6 @@ photos: [
     },
 
 
-    "mexico-street": {
-        country: "Mexico",
-        name: "Street",
-        description:
-            "Fragments of everyday life and people encountered on the streets of Mexico.",
-        photos: [
-            "images/mexico-street-1.jpg",
-            "images/mexico-street-2.jpg",
-            "images/mexico-street-3.jpg",
-            "images/mexico-street-4.jpg"
-        ]
-    },
 
    /* =====================
    PROJECTS
