@@ -399,7 +399,7 @@ const aboutClose =
    ========================= */
 
 let currentProject =
-    "zapatista";
+    "guatemala-street";
 
 
 let currentSlide =
