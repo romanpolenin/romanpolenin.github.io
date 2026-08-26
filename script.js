@@ -250,7 +250,6 @@ streetmusic: {
         ]
     },
 
-
     tajumulco: {
         country: "Guatemala",
         name: "Tajumulco and Santa Maria",
@@ -279,7 +278,16 @@ streetmusic: {
         ]
     },
 
-
+    fuego: {
+        country: "Guatemala",
+        name: "Fuego",
+        description:
+            "A trek to volcano Fuego.",
+        photos: [
+            "images/fuego-1.jpg",
+        ]
+    },
+   
     "guatemala-street": {
         country: "Guatemala",
         name: "Street",
@@ -323,7 +331,6 @@ streetmusic: {
             "images/guatemala-street-35.jpg"
         ]
     }
-
 };
 
 
