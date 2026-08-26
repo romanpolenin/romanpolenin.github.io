@@ -996,5 +996,5 @@ document.addEventListener(
    ========================= */
 
 showProject(
-    "zapatista"
+    "mexico-street"
 );
