@@ -285,6 +285,28 @@ streetmusic: {
             "A trek to volcano Fuego.",
         photos: [
             "images/fuego-1.jpg",
+            "images/fuego-2.jpg",
+            "images/fuego-3.jpg",
+            "images/fuego-4.jpg",
+            "images/fuego-5.jpg",
+            "images/fuego-6.jpg",
+            "images/fuego-7.jpg",
+            "images/fuego-8.jpg",
+            "images/fuego-9.jpg",
+            "images/fuego-10.jpg",
+            "images/fuego-11.jpg",
+            "images/fuego-12.jpg",
+            "images/fuego-13.jpg",
+            "images/fuego-14.jpg",
+            "images/fuego-15.jpg",
+            "images/fuego-16.jpg",
+            "images/fuego-17.jpg",
+            "images/fuego-18.jpg",
+            "images/fuego-19.jpg",
+            "images/fuego-20.jpg",
+            "images/fuego-21.jpg",
+            "images/fuego-22.jpg",
+            "images/fuego-23.jpg"
         ]
     },
    
