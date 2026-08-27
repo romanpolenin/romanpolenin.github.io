@@ -338,30 +338,63 @@ streetmusic: {
    ELEMENTS
    ========================= */
 
-const slidesContainer = document.getElementById("slides");
-const projectName = document.getElementById("project-name");
-const projectDescription = document.getElementById("project-description");
-const counter = document.getElementById("counter");
-const projectButtons = document.querySelectorAll(".project");
-const countryButtons = document.querySelectorAll(".country-title");
-const previousButton = document.getElementById("prev");
-const nextButton = document.getElementById("next");
-const aboutButton = document.getElementById("about-button");
-const nameLink = document.querySelector(".name");
-const about = document.getElementById("about");
-const aboutClose = document.getElementById("about-close");
+const slidesContainer =
+    document.getElementById("slides");
+
+const projectName =
+    document.getElementById("project-name");
+
+const projectDescription =
+    document.getElementById(
+        "project-description"
+    );
+
+const counter =
+    document.getElementById("counter");
+
+const projectButtons =
+    document.querySelectorAll(".project");
+
+const countryButtons =
+    document.querySelectorAll(
+        ".country-title"
+    );
+
+const previousButton =
+    document.getElementById("prev");
+
+const nextButton =
+    document.getElementById("next");
+
+const aboutButton =
+    document.getElementById(
+        "about-button"
+    );
+
+const nameLink =
+    document.querySelector(".name");
+
+const about =
+    document.getElementById("about");
+
+const aboutClose =
+    document.getElementById(
+        "about-close"
+    );
 
 
 /* =========================
    STATE
    ========================= */
 
-let currentProject = "guatemala-street";
-let currentSlide = 0;
-let isChanging = false;
+let currentProject =
+    "guatemala-street";
 
-let lastFocusedElementBeforeDialog = null;
-let focusTrapHandler = null;
+let currentSlide =
+    0;
+
+let isChanging =
+    false;
 
 
 /* =========================
@@ -369,54 +402,72 @@ let focusTrapHandler = null;
    ========================= */
 
 function createSlides(project) {
-    // Clear safely
-    while (slidesContainer.firstChild) {
-        slidesContainer.removeChild(slidesContainer.firstChild);
-    }
 
-    project.photos.forEach((photo, index) => {
-        const slide = document.createElement("figure");
-        slide.className = "slide";
-        slide.setAttribute("data-index", index);
-        slide.setAttribute("role", "group");
-        slide.setAttribute("aria-roledescription", "slide");
+    slidesContainer.innerHTML = "";
 
-        // non-active slides are hidden from assistive tech
-        slide.setAttribute("aria-hidden", index === 0 ? "false" : "true");
-        // make it focusable if script needs to focus it later
-        slide.setAttribute("tabindex", "-1");
+    project.photos.forEach(
+        (photo, index) => {
 
-        if (index === 0) {
-            slide.classList.add("active");
+            const slide =
+                document.createElement(
+                    "div"
+                );
+
+            slide.className =
+                "slide";
+
+            if (index === 0) {
+
+                slide.classList.add(
+                    "active"
+                );
+
+            }
+
+            const image =
+                document.createElement(
+                    "img"
+                );
+
+            image.alt =
+                project.name +
+                " — photograph " +
+                (index + 1);
+
+            image.draggable =
+                false;
+
+            /*
+             * Only the first image
+             * is loaded immediately.
+             */
+
+            if (index === 0) {
+
+                image.src =
+                    photo;
+
+            }
+
+            /*
+             * Store the real path
+             * for later loading.
+             */
+
+            image.dataset.src =
+                photo;
+
+            slide.appendChild(
+                image
+            );
+
+            slidesContainer.appendChild(
+                slide
+            );
+
         }
+    );
 
-        const image = document.createElement("img");
-        image.alt = `${project.name} — photograph ${index + 1}`;
-        image.draggable = false;
-        image.decoding = "async";
-
-        // first image loads eagerly to preserve perceived speed
-        if (index === 0) {
-            image.src = photo;
-            image.loading = "eager";
-        } else {
-            // lazy-load others
-            image.dataset.src = photo;
-            image.loading = "lazy";
-        }
-
-        // prevent layout shifts: if you have sizes, set width/height attributes here
-        // image.width = ...; image.height = ...;
-
-        slide.appendChild(image);
-        // Keep an (optional) hidden caption for screen readers only
-        const figcaption = document.createElement("figcaption");
-        figcaption.className = "visually-hidden";
-        figcaption.textContent = `${project.name} — photograph ${index + 1}`;
-        slide.appendChild(figcaption);
-
-        slidesContainer.appendChild(slide);
-    });
 }
 
 
@@ -425,48 +476,60 @@ function createSlides(project) {
    ========================= */
 
 function loadImage(index) {
-    const slides = slidesContainer.querySelectorAll(".slide");
-    const slide = slides[index];
-    if (!slide) return Promise.resolve();
 
-    const image = slide.querySelector("img");
-    if (!image) return Promise.resolve();
+    const slides =
+        slidesContainer.querySelectorAll(
+            ".slide"
+        );
 
-    // already loaded (has src)
-    if (image.src && image.src.length) {
+    const slide =
+        slides[index];
+
+    if (!slide) {
         return Promise.resolve();
     }
 
-    const src = image.dataset.src;
-    if (!src) return Promise.resolve();
+    const image =
+        slide.querySelector("img");
 
-    return new Promise((resolve) => {
-        let settled = false;
+    if (!image) {
+        return Promise.resolve();
+    }
 
-        function onLoad() {
-            if (settled) return;
-            settled = true;
-            image.removeAttribute("data-src");
-            image.onload = null;
-            image.onerror = null;
-            resolve();
+    /*
+     * Already loaded.
+     */
+
+    if (image.src) {
+
+        return Promise.resolve();
+
+    }
+
+    const src =
+        image.dataset.src;
+
+    if (!src) {
+
+        return Promise.resolve();
+
+    }
+
+    return new Promise(
+        (resolve, reject) => {
+
+            image.onload =
+                () => resolve();
+
+            image.onerror =
+                () => reject();
+
+            image.src =
+                src;
+
         }
+    );
 
-        function onError() {
-            if (settled) return;
-            settled = true;
-            image.onerror = null;
-            image.onload = null;
-            // Mark the image as failed so UI can handle it (CSS can show placeholder)
-            image.alt = `${image.alt} (failed to load)`;
-            resolve();
-        }
-
-        image.onload = onLoad;
-        image.onerror = onError;
-        // Start loading
-        image.src = src;
-    });
 }
 
 
@@ -475,17 +538,49 @@ function loadImage(index) {
    ========================= */
 
 function preloadNearbyImages() {
-    const project = projects[currentProject];
-    if (!project) return;
-    const total = project.photos.length;
 
-    let next = currentSlide + 1;
-    if (next >= total) next = 0;
-    loadImage(next).catch(() => {});
+    const project =
+        projects[currentProject];
 
-    let previous = currentSlide - 1;
-    if (previous < 0) previous = total - 1;
-    loadImage(previous).catch(() => {});
+    if (!project) {
+        return;
+    }
+
+    const total =
+        project.photos.length;
+
+
+    /*
+     * Preload next image.
+     */
+
+    let next =
+        currentSlide + 1;
+
+    if (next >= total) {
+        next = 0;
+    }
+
+    loadImage(next).catch(
+        () => {}
+    );
+
+
+    /*
+     * Preload previous image.
+     */
+
+    let previous =
+        currentSlide - 1;
+
+    if (previous < 0) {
+        previous = total - 1;
+    }
+
+    loadImage(previous).catch(
+        () => {}
+    );
+
 }
 
 
@@ -493,50 +588,96 @@ function preloadNearbyImages() {
    SHOW PROJECT
    ========================= */
 
-async function showProject(projectId) {
-    const project = projects[projectId];
-    if (!project) return;
+async function showProject(
+    projectId
+) {
 
-    currentProject = projectId;
-    currentSlide = 0;
+    const project =
+        projects[projectId];
 
-    // Update project info
-    projectName.textContent = project.name;
-    projectDescription.textContent = project.description || "";
-
-    // Recreate slides
-    createSlides(project);
-
-    // Load first image before showing
-    try {
-        await loadImage(0);
-    } catch (e) {
-        // fail gracefully
-        // eslint-disable-next-line no-console
-        console.warn("First image failed to load", e);
+    if (!project) {
+        return;
     }
 
+
+    currentProject =
+        projectId;
+
+    currentSlide =
+        0;
+
+
+    /* Project information */
+
+    projectName.textContent =
+        project.name;
+
+    projectDescription.textContent =
+        project.description;
+
+
+    /* Create empty slides */
+
+    createSlides(
+        project
+    );
+
+
+    /* Load first image */
+
+    try {
+
+        await loadImage(0);
+
+    }
+    catch {
+
+        return;
+
+    }
+
+
     updateCounter();
-    updateActiveProjectButtons();
 
-    // Close about if open
-    about.classList.remove("open");
-    about.setAttribute("aria-hidden", "true");
 
-    // reset slide states in DOM (ensure only first is active)
-    const slides = slidesContainer.querySelectorAll(".slide");
-    slides.forEach((s, i) => {
-        if (i === 0) {
-            s.classList.add("active");
-            s.setAttribute("aria-hidden", "false");
-        } else {
-            s.classList.remove("active");
-            s.setAttribute("aria-hidden", "true");
+    /* Active project */
+
+    projectButtons.forEach(
+        button => {
+
+            button.classList.remove(
+                "active"
+            );
+
+            if (
+                button.dataset.project
+                === projectId
+            ) {
+
+                button.classList.add(
+                    "active"
+                );
+
+            }
+
         }
-    });
+    );
 
-    // preload neighbors
+
+    /* Close About */
+
+    about.classList.remove(
+        "open"
+    );
+
+
+    /*
+     * Load next and previous
+     * images in background.
+     */
+
     preloadNearbyImages();
+
 }
 
 
@@ -545,67 +686,145 @@ async function showProject(projectId) {
    ========================= */
 
 async function showSlide(index) {
-    if (isChanging) return;
-    const slides = slidesContainer.querySelectorAll(".slide");
-    if (!slides.length) return;
 
-    let newIndex = index;
-
-    // Loop
-    if (newIndex < 0) newIndex = slides.length - 1;
-    if (newIndex >= slides.length) newIndex = 0;
-    if (newIndex === currentSlide) return;
-
-    isChanging = true;
-    setControlsDisabled(true);
-
-    try {
-        await loadImage(newIndex);
-    } catch (e) {
-        // loading failed, abort change
-        isChanging = false;
-        setControlsDisabled(false);
+    if (isChanging) {
         return;
     }
 
-    // Update ARIA and classes
-    const previousSlideEl = slides[currentSlide];
-    if (previousSlideEl) {
-        previousSlideEl.classList.remove("active");
-        previousSlideEl.setAttribute("aria-hidden", "true");
+
+    const slides =
+        slidesContainer.querySelectorAll(
+            ".slide"
+        );
+
+
+    if (!slides.length) {
+        return;
     }
 
-    currentSlide = newIndex;
 
-    const currentSlideEl = slides[currentSlide];
-    if (currentSlideEl) {
-        currentSlideEl.classList.add("active");
-        currentSlideEl.setAttribute("aria-hidden", "false");
-        // move focus to image for screen-reader users if needed (do not steal focus unnecessarily)
-        // currentSlideEl.focus();
+    let newIndex =
+        index;
+
+
+    /* Loop */
+
+    if (newIndex < 0) {
+
+        newIndex =
+            slides.length - 1;
+
     }
+
+
+    if (
+        newIndex >= slides.length
+    ) {
+
+        newIndex =
+            0;
+
+    }
+
+
+    if (
+        newIndex === currentSlide
+    ) {
+
+        return;
+
+    }
+
+
+    isChanging =
+        true;
+
+
+    try {
+
+        /*
+         * Load requested image
+         * before displaying it.
+         */
+
+        await loadImage(
+            newIndex
+        );
+
+    }
+    catch {
+
+        isChanging =
+            false;
+
+        return;
+
+    }
+
+
+    slides[currentSlide]
+        .classList.remove(
+            "active"
+        );
+
+
+    currentSlide =
+        newIndex;
+
+
+    slides[currentSlide]
+        .classList.add(
+            "active"
+        );
+
 
     updateCounter();
+
+
+    /*
+     * Preload next/previous
+     * images after changing.
+     */
+
     preloadNearbyImages();
 
-    // small delay to throttle rapid interactions and keep CSS transitions intact
-    setTimeout(() => {
-        isChanging = false;
-        setControlsDisabled(false);
-    }, 400);
+
+    setTimeout(
+        () => {
+
+            isChanging =
+                false;
+
+        },
+        400
+    );
+
 }
 
 
 /* =========================
-   NEXT / PREVIOUS
+   NEXT
    ========================= */
 
 function nextSlide() {
-    showSlide(currentSlide + 1);
+
+    showSlide(
+        currentSlide + 1
+    );
+
 }
 
+
+/* =========================
+   PREVIOUS
+   ========================= */
+
 function previousSlide() {
-    showSlide(currentSlide - 1);
+
+    showSlide(
+        currentSlide - 1
+    );
+
 }
 
 
@@ -614,13 +833,25 @@ function previousSlide() {
    ========================= */
 
 function updateCounter() {
-    const project = projects[currentProject];
-    const current = String(currentSlide + 1).padStart(2, "0");
-    const total = String(project.photos.length).padStart(2, "0");
-    counter.textContent = `${current} / ${total}`;
-    // ensure assistive tech knows what changed
-    counter.setAttribute("aria-live", "polite");
-    counter.setAttribute("aria-atomic", "true");
+
+    const project =
+        projects[currentProject];
+
+    const current =
+        String(
+            currentSlide + 1
+        ).padStart(2, "0");
+
+    const total =
+        String(
+            project.photos.length
+        ).padStart(2, "0");
+
+    counter.textContent =
+        current +
+        " / " +
+        total;
+
 }
 
 
@@ -628,193 +859,255 @@ function updateCounter() {
    PROJECT BUTTONS
    ========================= */
 
-function updateActiveProjectButtons() {
-    projectButtons.forEach((button) => {
-        const isActive = button.dataset.project === currentProject;
-        button.classList.toggle("active", isActive);
-        button.setAttribute("aria-pressed", isActive ? "true" : "false");
-    });
-}
+projectButtons.forEach(
+    button => {
 
-projectButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-        showProject(button.dataset.project);
-    });
-});
+        button.addEventListener(
+            "click",
+            () => {
+
+                showProject(
+                    button.dataset.project
+                );
+
+            }
+        );
+
+    }
+);
 
 
 /* =========================
    COUNTRY COLLAPSIBLE MENU
    ========================= */
 
-countryButtons.forEach((button) => {
-    // Initialize aria-expanded based on classes (if any)
-    const country = button.dataset.country;
-    const menu = document.getElementById(`${country}-projects`);
-    if (menu) {
-        const expanded = !menu.classList.contains("closed");
-        button.setAttribute("aria-expanded", expanded ? "true" : "false");
+countryButtons.forEach(
+    button => {
+
+        button.addEventListener(
+            "click",
+            () => {
+
+                const country =
+                    button.dataset.country;
+
+                const menu =
+                    document.getElementById(
+                        country +
+                        "-projects"
+                    );
+
+                if (!menu) {
+                    return;
+                }
+
+                menu.classList.toggle(
+                    "closed"
+                );
+
+                button.classList.toggle(
+                    "closed"
+                );
+
+            }
+        );
+
     }
-
-    button.addEventListener("click", () => {
-        const countryId = button.dataset.country;
-        const menuEl = document.getElementById(`${countryId}-projects`);
-        if (!menuEl) return;
-
-        const isNowClosed = menuEl.classList.toggle("closed");
-        button.classList.toggle("closed");
-        // reflect state in aria-expanded
-        button.setAttribute("aria-expanded", isNowClosed ? "false" : "true");
-    });
-});
+);
 
 
 /* =========================
    ARROWS
    ========================= */
 
-nextButton.addEventListener("click", nextSlide);
-previousButton.addEventListener("click", previousSlide);
+nextButton.addEventListener(
+    "click",
+    nextSlide
+);
 
-
-/* =========================
-   CONTROL DISABLE / ARIA
-   ========================= */
-
-function setControlsDisabled(disabled) {
-    if (disabled) {
-        nextButton.setAttribute("aria-disabled", "true");
-        previousButton.setAttribute("aria-disabled", "true");
-    } else {
-        nextButton.setAttribute("aria-disabled", "false");
-        previousButton.setAttribute("aria-disabled", "false");
-    }
-}
+previousButton.addEventListener(
+    "click",
+    previousSlide
+);
 
 
 /* =========================
    KEYBOARD
    ========================= */
 
-document.addEventListener("keydown", (event) => {
-    // If about dialog is open, let dialog handle keyboard (trap)
-    if (about.classList.contains("open")) return;
+document.addEventListener(
+    "keydown",
+    event => {
 
-    if (event.key === "ArrowRight") {
-        nextSlide();
-    } else if (event.key === "ArrowLeft") {
-        previousSlide();
+        if (
+            about.classList.contains(
+                "open"
+            )
+        ) {
+
+            return;
+
+        }
+
+
+        if (
+            event.key === "ArrowRight"
+        ) {
+
+            nextSlide();
+
+        }
+
+
+        if (
+            event.key === "ArrowLeft"
+        ) {
+
+            previousSlide();
+
+        }
+
     }
-});
+);
 
 
 /* =========================
    TOUCH / SWIPE
    ========================= */
 
-let touchStartX = 0;
-let touchEndX = 0;
+let touchStartX =
+    0;
+
+let touchEndX =
+    0;
+
 
 slidesContainer.addEventListener(
     "touchstart",
-    (event) => {
-        touchStartX = event.changedTouches[0].screenX;
+    event => {
+
+        touchStartX =
+            event
+                .changedTouches[0]
+                .screenX;
+
     },
     { passive: true }
 );
 
+
 slidesContainer.addEventListener(
     "touchend",
-    (event) => {
-        touchEndX = event.changedTouches[0].screenX;
-        const distance = touchEndX - touchStartX;
-        if (Math.abs(distance) < 50) return;
-        if (distance < 0) {
-            nextSlide();
-        } else {
-            previousSlide();
+    event => {
+
+        touchEndX =
+            event
+                .changedTouches[0]
+                .screenX;
+
+
+        const distance =
+            touchEndX -
+            touchStartX;
+
+
+        if (
+            Math.abs(distance) < 50
+        ) {
+
+            return;
+
         }
+
+
+        if (distance < 0) {
+
+            nextSlide();
+
+        }
+        else {
+
+            previousSlide();
+
+        }
+
     },
     { passive: true }
 );
 
 
 /* =========================
-   ABOUT (DIALOG) - focus management & a11y
+   ABOUT
    ========================= */
 
-function trapFocus(dialog) {
-    const focusableSelectors =
-        'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), [tabindex]:not([tabindex="-1"])';
-    const elements = Array.from(dialog.querySelectorAll(focusableSelectors));
-    if (!elements.length) return () => {};
-    const first = elements[0];
-    const last = elements[elements.length - 1];
+aboutButton.addEventListener(
+    "click",
+    () => {
 
-    function handleKey(e) {
-        if (e.key !== "Tab") return;
-        if (e.shiftKey) {
-            if (document.activeElement === first) {
-                e.preventDefault();
-                last.focus();
-            }
-        } else {
-            if (document.activeElement === last) {
-                e.preventDefault();
-                first.focus();
-            }
+        about.classList.add(
+            "open"
+        );
+
+    }
+);
+
+
+/* NAME → ABOUT */
+
+nameLink.addEventListener(
+    "click",
+    event => {
+
+        event.preventDefault();
+
+        about.classList.add(
+            "open"
+        );
+
+    }
+);
+
+
+/* CLOSE ABOUT */
+
+aboutClose.addEventListener(
+    "click",
+    () => {
+
+        about.classList.remove(
+            "open"
+        );
+
+    }
+);
+
+
+/* =========================
+   ESC
+   ========================= */
+
+document.addEventListener(
+    "keydown",
+    event => {
+
+        if (
+            event.key === "Escape"
+        ) {
+
+            about.classList.remove(
+                "open"
+            );
+
         }
+
     }
-
-    document.addEventListener("keydown", handleKey);
-    // return an "untrap" function
-    return () => {
-        document.removeEventListener("keydown", handleKey);
-    };
-}
-
-function openAbout(opener) {
-    lastFocusedElementBeforeDialog = opener || document.activeElement;
-    about.classList.add("open");
-    about.setAttribute("aria-hidden", "false");
-    // focus the close button
-    if (aboutClose) aboutClose.focus();
-    // install focus trap
-    focusTrapHandler = trapFocus(about);
-}
-
-function closeAbout() {
-    about.classList.remove("open");
-    about.setAttribute("aria-hidden", "true");
-    // remove focus trap
-    if (typeof focusTrapHandler === "function") {
-        focusTrapHandler();
-        focusTrapHandler = null;
-    }
-    // restore focus
-    if (lastFocusedElementBeforeDialog && typeof lastFocusedElementBeforeDialog.focus === "function") {
-        lastFocusedElementBeforeDialog.focus();
-    }
-    lastFocusedElementBeforeDialog = null;
-}
-
-aboutButton.addEventListener("click", () => openAbout(aboutButton));
-nameLink.addEventListener("click", (event) => {
-    event.preventDefault();
-    openAbout(nameLink);
-});
-aboutClose.addEventListener("click", closeAbout);
-
-// ESC closes dialog
-document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && about.classList.contains("open")) {
-        closeAbout();
-    }
-});
+);
 
 
 /* =========================
    INITIALIZE
    ========================= */
 
-showProject("mexico-street");
+showProject(
+    "mexico-street"
+);
