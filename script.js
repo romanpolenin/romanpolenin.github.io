@@ -21,7 +21,6 @@ const projects = {
             "images/mexico-street-4.jpg",
             "images/mexico-street-5.jpg",
             "images/mexico-street-6.jpg",
-            "images/mexico-street-7.jpg",
             "images/mexico-street-8.jpg",
             "images/mexico-street-9.jpg",
             "images/mexico-street-10.jpg",
