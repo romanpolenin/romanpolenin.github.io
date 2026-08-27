@@ -2,7 +2,9 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta
         name="viewport"
         content="width=device-width, initial-scale=1.0"
@@ -15,243 +17,216 @@
         content="Roman Polenin — documentary photographer."
     >
 
-    <!-- Basic social / SEO -->
-    <link rel="canonical" href="https://romanpolenin.github.io/">
-    <meta property="og:title" content="Roman Polenin — Photographer">
-    <meta property="og:description" content="Documentary photographer — documentary, portrait, travel">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://romanpolenin.github.io/">
-    <meta property="og:image" content="https://romanpolenin.github.io/og-image.jpg">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:creator" content="@romanpolenin">
-
-    <link rel="icon" href="/favicon.ico">
-
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
-<a class="skip-link" href="#slides">Skip to gallery</a>
 
 <div class="site">
+
 
     <!-- =========================
          SIDEBAR
          ========================= -->
 
-    <aside class="sidebar" role="complementary">
+    <aside class="sidebar">
+
 
         <div class="identity">
-            <h1 class="site-title">
-                <a href="#" class="name">ROMAN POLENIN</a>
-            </h1>
+
+            <a href="#" class="name">
+                ROMAN POLENIN
+            </a>
 
             <p class="description">
                 Photographer<br>
                 Documentary · Portrait · Travel
             </p>
+
         </div>
+
+
 
         <!-- =========================
              PROJECT MENU
              ========================= -->
 
-        <nav class="projects" role="navigation" aria-label="Project list">
+        <nav class="projects">
 
-            <!-- MEXICO -->
-            <div class="country">
-                <button
-                    class="country-title"
-                    data-country="mexico"
-                    aria-expanded="true"
-                    aria-controls="mexico-projects"
-                    type="button"
-                >
-                    MEXICO
-                </button>
+    <!-- MEXICO -->
 
-                <ul
-                    class="country-projects open"
-                    id="mexico-projects"
-                >
-                    <li>
-                        <button
-                            class="project active"
-                            data-project="mexico-street"
-                            aria-pressed="true"
-                            type="button"
-                        >
-                            <span>Street</span>
-                        </button>
-                    </li>
+    <div class="country">
 
-                    <li>
-                        <button
-                            class="project"
-                            data-project="orizaba"
-                            aria-pressed="false"
-                            type="button"
-                        >
-                            <span>Pico de Orizaba</span>
-                        </button>
-                    </li>
+        <button
+            class="country-title"
+            data-country="mexico"
+        >
+            MEXICO
+        </button>
 
-                    <li>
-                        <button
-                            class="project"
-                            data-project="zapatista"
-                            aria-pressed="false"
-                            type="button"
-                        >
-                            <span>Zapatista</span>
-                        </button>
-                    </li>
-                </ul>
-            </div>
+        <div
+            class="country-projects open"
+            id="mexico-projects"
+        >
 
-            <!-- GUATEMALA -->
-            <div class="country">
-                <button
-                    class="country-title"
-                    data-country="guatemala"
-                    aria-expanded="true"
-                    aria-controls="guatemala-projects"
-                    type="button"
-                >
-                    GUATEMALA
-                </button>
+            <button
+                class="project active"
+                data-project="mexico-street"
+            >
+                <span>Street</span>
+            </button>
 
-                <ul
-                    class="country-projects open"
-                    id="guatemala-projects"
-                >
-                    <li>
-                        <button
-                            class="project"
-                            data-project="guatemala-street"
-                            aria-pressed="false"
-                            type="button"
-                        >
-                            <span>Street</span>
-                        </button>
-                    </li>
+            <button
+                class="project"
+                data-project="orizaba"
+            >
+                <span>Pico de Orizaba</span>
+            </button>
 
-                    <li>
-                        <button
-                            class="project"
-                            data-project="fuego"
-                            aria-pressed="false"
-                            type="button"
-                        >
-                            <span>Fuego</span>
-                        </button>
-                    </li>
+            <button
+                class="project"
+                data-project="zapatista"
+            >
+                <span>Zapatista</span>
+            </button>
 
-                    <li>
-                        <button
-                            class="project"
-                            data-project="tajumulco"
-                            aria-pressed="false"
-                            type="button"
-                        >
-                            <span>Tajumulco and Santa Maria</span>
-                        </button>
-                    </li>
+        </div>
 
-                    <li>
-                        <button
-                            class="project"
-                            data-project="atitlan"
-                            aria-pressed="false"
-                            type="button"
-                        >
-                            <span>Atitlán</span>
-                        </button>
-                    </li>
-                </ul>
-            </div>
+    </div>
 
-            <!-- PROJECTS -->
-            <div class="country">
-                <button
-                    class="country-title"
-                    data-country="projects"
-                    aria-expanded="true"
-                    aria-controls="projects-projects"
-                    type="button"
-                >
-                    PROJECTS
-                </button>
 
-                <ul
-                    class="country-projects open"
-                    id="projects-projects"
-                >
-                    <li>
-                        <button
-                            class="project"
-                            data-project="sombrero"
-                            aria-pressed="false"
-                            type="button"
-                        >
-                            <span>Sombrero</span>
-                        </button>
-                    </li>
+    <!-- GUATEMALA -->
 
-                    <li>
-                        <button
-                            class="project"
-                            data-project="mannequin"
-                            aria-pressed="false"
-                            type="button"
-                        >
-                            <span>Mannequin</span>
-                        </button>
-                    </li>
+    <div class="country">
 
-                    <li>
-                        <button
-                            class="project"
-                            data-project="streetmusic"
-                            aria-pressed="false"
-                            type="button"
-                        >
-                            <span>Street Music</span>
-                        </button>
-                    </li>
-                </ul>
-            </div>
+        <button
+            class="country-title"
+            data-country="guatemala"
+        >
+            GUATEMALA
+        </button>
 
-        </nav>
+        <div
+            class="country-projects open"
+            id="guatemala-projects"
+        >
+            
+            <button
+                class="project"
+                data-project="guatemala-street"
+            >
+                <span>Street</span>
+            </button>
+            
+            <button
+                class="project"
+                data-project="fuego"
+            >
+                <span>Fuego</span>
+            </button>
+
+            <button
+                class="project"
+                data-project="tajumulco"
+            >
+                <span>Tajumulco and Santa Maria</span>
+            </button>
+
+            <button
+                class="project"
+                data-project="atitlan"
+            >
+                <span>Atitlán</span>
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- PROJECTS -->
+
+    <div class="country">
+
+        <button
+            class="country-title"
+            data-country="projects"
+        >
+            PROJECTS
+        </button>
+
+        <div
+            class="country-projects open"
+            id="projects-projects"
+        >
+
+            <button
+                class="project"
+                data-project="sombrero"
+            >
+                <span>Sombrero</span>
+            </button>
+
+            <button
+                class="project"
+                data-project="mannequin"
+            >
+                <span>Mannequin</span>
+            </button>
+            
+            <button
+                class="project"
+                data-project="streetmusic"
+            >
+                <span>Street Music</span>
+            </button>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
 
         <!-- =========================
              ABOUT
              ========================= -->
 
         <div class="bottom">
-            <button id="about-button" type="button" aria-haspopup="dialog" aria-controls="about">
+
+            <button id="about-button">
                 About
             </button>
+
         </div>
 
+
     </aside>
+
+
 
     <!-- =========================
          GALLERY
          ========================= -->
 
-    <main id="main" class="gallery" role="main">
+    <main class="gallery">
+
 
         <div class="gallery-header">
 
             <div>
+
                 <div
                     id="project-name"
                     class="project-name"
                 >
                     Zapatista
                 </div>
+
 
                 <div
                     id="project-description"
@@ -260,56 +235,50 @@
                     Documentary project about the Zapatista
                     communities in Chiapas.
                 </div>
+
             </div>
 
-            <span id="counter" aria-live="polite" aria-atomic="true">
+
+            <span id="counter">
                 01 / 04
             </span>
 
         </div>
 
+
+
         <!-- SLIDES -->
+
         <div
             id="slides"
             class="slides"
-            aria-roledescription="carousel"
-            aria-label="Project photographs"
-        >
-            <!--
-              Slides are populated by script.js.
-              When rendering slides, ensure each slide is a <figure> with an <img alt="..."> and optional <figcaption>.
-              Example (rendered by JS):
+        ></div>
 
-              <figure class="slide" data-index="0" aria-hidden="false">
-                <picture>
-                  <source srcset="images/zapatista-01.webp" type="image/webp">
-                  <img src="images/zapatista-01.jpg" alt="People gathered in the plaza, Chiapas" loading="lazy" width="1600" height="1067">
-                </picture>
-                <figcaption>San Cristóbal, Chiapas — 2018</figcaption>
-              </figure>
-            -->
-        </div>
+
 
         <!-- ARROWS -->
+
         <button
             id="prev"
             class="arrow arrow-left"
             aria-label="Previous photograph"
-            type="button"
         >
             ←
         </button>
+
 
         <button
             id="next"
             class="arrow arrow-right"
             aria-label="Next photograph"
-            type="button"
         >
             →
         </button>
 
+
     </main>
+
+
 
     <!-- =========================
          ABOUT
@@ -318,23 +287,23 @@
     <section
         id="about"
         class="about"
-        role="dialog"
-        aria-labelledby="about-heading"
-        aria-hidden="true"
-        tabindex="-1"
     >
 
         <button
             id="about-close"
             class="about-close"
-            aria-label="Close about dialog"
-            type="button"
+            aria-label="Close"
         >
             ×
         </button>
 
+
         <div class="about-content">
-            <h2 id="about-heading">About</h2>
+
+            <h2>
+                About
+            </h2>
+
 
             <p>
                 Roman Polenin is a photographer
@@ -342,14 +311,18 @@
                 portrait and travel photography.
             </p>
 
+
             <p>
                 Currently working in Latin America.
             </p>
 
+
             <div class="contact">
+
                 <a href="mailto:Polenin.roma@hotmail.com">
                     Polenin.roma@hotmail.com
                 </a>
+
 
                 <a
                     href="https://instagram.com/romanpolenin"
@@ -358,19 +331,19 @@
                 >
                     Instagram
                 </a>
+
             </div>
+
         </div>
+
     </section>
+
 
 </div>
 
-<noscript>
-    <div class="noscript-message" role="status">
-        This gallery requires JavaScript to load the images and interactive features. Please enable JavaScript or contact <a href="mailto:Polenin.roma@hotmail.com">Polenin.roma@hotmail.com</a> to view images.
-    </div>
-</noscript>
 
-<script src="script.js" defer></script>
+<script src="script.js"></script>
+
 
 </body>
 
