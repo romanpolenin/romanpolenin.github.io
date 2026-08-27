@@ -341,52 +341,41 @@ streetmusic: {
 const slidesContainer =
     document.getElementById("slides");
 
-
 const projectName =
     document.getElementById("project-name");
-
 
 const projectDescription =
     document.getElementById(
         "project-description"
     );
 
-
 const counter =
     document.getElementById("counter");
 
-
 const projectButtons =
     document.querySelectorAll(".project");
-
 
 const countryButtons =
     document.querySelectorAll(
         ".country-title"
     );
 
-
 const previousButton =
     document.getElementById("prev");
 
-
 const nextButton =
     document.getElementById("next");
-
 
 const aboutButton =
     document.getElementById(
         "about-button"
     );
 
-
 const nameLink =
     document.querySelector(".name");
 
-
 const about =
     document.getElementById("about");
-
 
 const aboutClose =
     document.getElementById(
@@ -401,40 +390,195 @@ const aboutClose =
 let currentProject =
     "guatemala-street";
 
-
 let currentSlide =
     0;
-
 
 let isChanging =
     false;
 
 
 /* =========================
-   PRELOAD IMAGE
+   CREATE SLIDES
    ========================= */
 
-function preloadImage(src) {
+function createSlides(project) {
+
+    slidesContainer.innerHTML = "";
+
+    project.photos.forEach(
+        (photo, index) => {
+
+            const slide =
+                document.createElement(
+                    "div"
+                );
+
+            slide.className =
+                "slide";
+
+            if (index === 0) {
+
+                slide.classList.add(
+                    "active"
+                );
+
+            }
+
+            const image =
+                document.createElement(
+                    "img"
+                );
+
+            image.alt =
+                project.name +
+                " — photograph " +
+                (index + 1);
+
+            image.draggable =
+                false;
+
+            /*
+             * Only the first image
+             * is loaded immediately.
+             */
+
+            if (index === 0) {
+
+                image.src =
+                    photo;
+
+            }
+
+            /*
+             * Store the real path
+             * for later loading.
+             */
+
+            image.dataset.src =
+                photo;
+
+            slide.appendChild(
+                image
+            );
+
+            slidesContainer.appendChild(
+                slide
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================
+   LOAD IMAGE
+   ========================= */
+
+function loadImage(index) {
+
+    const slides =
+        slidesContainer.querySelectorAll(
+            ".slide"
+        );
+
+    const slide =
+        slides[index];
+
+    if (!slide) {
+        return Promise.resolve();
+    }
+
+    const image =
+        slide.querySelector("img");
+
+    if (!image) {
+        return Promise.resolve();
+    }
+
+    /*
+     * Already loaded.
+     */
+
+    if (image.src) {
+
+        return Promise.resolve();
+
+    }
+
+    const src =
+        image.dataset.src;
+
+    if (!src) {
+
+        return Promise.resolve();
+
+    }
 
     return new Promise(
         (resolve, reject) => {
 
-            const image =
-                new Image();
-
-
             image.onload =
-                resolve;
-
+                () => resolve();
 
             image.onerror =
-                reject;
-
+                () => reject();
 
             image.src =
                 src;
 
         }
+    );
+
+}
+
+
+/* =========================
+   PRELOAD NEARBY IMAGE
+   ========================= */
+
+function preloadNearbyImages() {
+
+    const project =
+        projects[currentProject];
+
+    if (!project) {
+        return;
+    }
+
+    const total =
+        project.photos.length;
+
+
+    /*
+     * Preload next image.
+     */
+
+    let next =
+        currentSlide + 1;
+
+    if (next >= total) {
+        next = 0;
+    }
+
+    loadImage(next).catch(
+        () => {}
+    );
+
+
+    /*
+     * Preload previous image.
+     */
+
+    let previous =
+        currentSlide - 1;
+
+    if (previous < 0) {
+        previous = total - 1;
+    }
+
+    loadImage(previous).catch(
+        () => {}
     );
 
 }
@@ -451,7 +595,6 @@ async function showProject(
     const project =
         projects[projectId];
 
-
     if (!project) {
         return;
     }
@@ -459,7 +602,6 @@ async function showProject(
 
     currentProject =
         projectId;
-
 
     currentSlide =
         0;
@@ -470,78 +612,29 @@ async function showProject(
     projectName.textContent =
         project.name;
 
-
     projectDescription.textContent =
         project.description;
 
 
-    /* Clear gallery */
+    /* Create empty slides */
 
-    slidesContainer.innerHTML =
-        "";
-
-
-    /* Create slides */
-
-    project.photos.forEach(
-        (photo, index) => {
-
-            const slide =
-                document.createElement(
-                    "div"
-                );
-
-
-            slide.className =
-                "slide";
-
-
-            if (index === 0) {
-
-                slide.classList.add(
-                    "active"
-                );
-
-            }
-
-
-            const image =
-                document.createElement(
-                    "img"
-                );
-
-
-            image.src =
-                photo;
-
-
-            image.alt =
-                project.name +
-                " — photograph " +
-                (index + 1);
-
-
-            image.draggable =
-                false;
-
-
-            image.loading =
-                index === 0
-                    ? "eager"
-                    : "lazy";
-
-
-            slide.appendChild(
-                image
-            );
-
-
-            slidesContainer.appendChild(
-                slide
-            );
-
-        }
+    createSlides(
+        project
     );
+
+
+    /* Load first image */
+
+    try {
+
+        await loadImage(0);
+
+    }
+    catch {
+
+        return;
+
+    }
 
 
     updateCounter();
@@ -555,7 +648,6 @@ async function showProject(
             button.classList.remove(
                 "active"
             );
-
 
             if (
                 button.dataset.project
@@ -578,6 +670,14 @@ async function showProject(
         "open"
     );
 
+
+    /*
+     * Load next and previous
+     * images in background.
+     */
+
+    preloadNearbyImages();
+
 }
 
 
@@ -593,7 +693,7 @@ async function showSlide(index) {
 
 
     const slides =
-        document.querySelectorAll(
+        slidesContainer.querySelectorAll(
             ".slide"
         );
 
@@ -640,14 +740,15 @@ async function showSlide(index) {
         true;
 
 
-    const project =
-        projects[currentProject];
-
-
     try {
 
-        await preloadImage(
-            project.photos[newIndex]
+        /*
+         * Load requested image
+         * before displaying it.
+         */
+
+        await loadImage(
+            newIndex
         );
 
     }
@@ -678,6 +779,14 @@ async function showSlide(index) {
 
 
     updateCounter();
+
+
+    /*
+     * Preload next/previous
+     * images after changing.
+     */
+
+    preloadNearbyImages();
 
 
     setTimeout(
@@ -728,18 +837,15 @@ function updateCounter() {
     const project =
         projects[currentProject];
 
-
     const current =
         String(
             currentSlide + 1
         ).padStart(2, "0");
 
-
     const total =
         String(
             project.photos.length
         ).padStart(2, "0");
-
 
     counter.textContent =
         current +
@@ -785,18 +891,19 @@ countryButtons.forEach(
                 const country =
                     button.dataset.country;
 
-
                 const menu =
                     document.getElementById(
                         country +
                         "-projects"
                     );
 
+                if (!menu) {
+                    return;
+                }
 
                 menu.classList.toggle(
                     "closed"
                 );
-
 
                 button.classList.toggle(
                     "closed"
@@ -817,7 +924,6 @@ nextButton.addEventListener(
     "click",
     nextSlide
 );
-
 
 previousButton.addEventListener(
     "click",
@@ -871,7 +977,6 @@ document.addEventListener(
 
 let touchStartX =
     0;
-
 
 let touchEndX =
     0;
@@ -955,7 +1060,6 @@ nameLink.addEventListener(
 
         event.preventDefault();
 
-
         about.classList.add(
             "open"
         );
@@ -978,7 +1082,9 @@ aboutClose.addEventListener(
 );
 
 
-/* ESC */
+/* =========================
+   ESC
+   ========================= */
 
 document.addEventListener(
     "keydown",
