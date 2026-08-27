@@ -133,7 +133,6 @@ photos: [
             "images/orizaba-4.jpg",
             "images/orizaba-5.jpg",
             "images/orizaba-6.jpg",
-            "images/orizaba-7.jpg",
             "images/orizaba-8.jpg",
             "images/orizaba-9.jpg",
             "images/orizaba-10.jpg",
