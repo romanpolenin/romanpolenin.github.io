@@ -163,7 +163,15 @@ sombrero: {
         "images/sombrero-1.jpg",
         "images/sombrero-2.jpg",
         "images/sombrero-3.jpg",
-        "images/sombrero-4.jpg"
+        "images/sombrero-4.jpg",
+        "images/sombrero-5.jpg",
+        "images/sombrero-6.jpg",
+        "images/sombrero-7.jpg",
+        "images/sombrero-8.jpg",
+        "images/sombrero-9.jpg",
+        "images/sombrero-10.jpg",
+        "images/sombrero-11.jpg",
+        "images/sombrero-12.jpg"
     ]
 
 },
