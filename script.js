@@ -288,7 +288,6 @@ streetmusic: {
             "images/fuego-4.jpg",
             "images/fuego-5.jpg",
             "images/fuego-6.jpg",
-            "images/fuego-7.jpg",
             "images/fuego-8.jpg",
             "images/fuego-9.jpg",
             "images/fuego-10.jpg",
