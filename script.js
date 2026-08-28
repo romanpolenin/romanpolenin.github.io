@@ -171,7 +171,8 @@ sombrero: {
         "images/sombrero-9.jpg",
         "images/sombrero-10.jpg",
         "images/sombrero-11.jpg",
-        "images/sombrero-12.jpg"
+        "images/sombrero-12.jpg",
+        "images/sombrero-13.jpg"
     ]
 
 },
