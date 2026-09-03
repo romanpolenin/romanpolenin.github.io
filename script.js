@@ -4,6 +4,17 @@
 
 const projects = {
 
+   portraits: {
+    country: "Portraits",
+    name: "Portraits",
+    description:
+        "Portrait photography.",
+    photos: [
+        "images/portraits-1.jpg",
+        "images/portraits-2.jpg",
+        "images/portraits-3.jpg"
+    ]
+},
 
     /* =====================
        MEXICO
