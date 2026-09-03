@@ -1,0 +1,8 @@
+# Code owners — specify who must review changes
+# Use @username for individuals or @org/team for teams
+
+# Default owner for everything
+* @romanpolenin
+
+# Example: docs owned by the same person
+/docs/ @romanpolenin
