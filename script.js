@@ -191,10 +191,32 @@ mannequin: {
     description:
         "",
     photos: [
-        "images/mannequin-1.jpg",
-        "images/mannequin-2.jpg",
-        "images/mannequin-3.jpg",
-        "images/mannequin-4.jpg"
+         "images/mannequin-1.jpg",
+         "images/mannequin-2.jpg",
+         "images/mannequin-3.jpg",
+         "images/mannequin-4.jpg",
+         "images/mannequin-5.jpg",
+         "images/mannequin-6.jpg",
+         "images/mannequin-7.jpg",
+         "images/mannequin-8.jpg",
+         "images/mannequin-9.jpg",
+         "images/mannequin-10.jpg",
+         "images/mannequin-11.jpg",
+         "images/mannequin-12.jpg",
+         "images/mannequin-13.jpg",
+         "images/mannequin-14.jpg",
+         "images/mannequin-15.jpg",
+         "images/mannequin-16.jpg",
+         "images/mannequin-17.jpg",
+         "images/mannequin-18.jpg",
+         "images/mannequin-19.jpg",
+         "images/mannequin-20.jpg",
+         "images/mannequin-21.jpg",
+         "images/mannequin-22.jpg",
+         "images/mannequin-23.jpg",
+         "images/mannequin-24.jpg",
+         "images/mannequin-25.jpg",
+         "images/mannequin-26.jpg"
     ]
 },
    
