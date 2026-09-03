@@ -153,6 +153,13 @@ body {
 }
 
 
+/* Standalone top-level project */
+
+.country-title.standalone::after {
+    content: "";
+}
+
+
 /* =========================
    COUNTRY PROJECTS
    ========================= */
