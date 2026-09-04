@@ -32,6 +32,7 @@ const projects = {
             "images/mexico-street-4.jpg",
             "images/mexico-street-5.jpg",
             "images/mexico-street-6.jpg",
+            "images/mexico-street-7.jpg",
             "images/mexico-street-8.jpg",
             "images/mexico-street-9.jpg",
             "images/mexico-street-10.jpg",
@@ -82,7 +83,15 @@ const projects = {
             "images/mexico-street-55.jpg",
             "images/mexico-street-56.jpg",
             "images/mexico-street-57.jpg",
-            "images/mexico-street-58.jpg"
+            "images/mexico-street-58.jpg", 
+            "images/mexico-street-59.jpg",
+            "images/mexico-street-60.jpg",
+            "images/mexico-street-61.jpg",
+            "images/mexico-street-62.jpg",
+            "images/mexico-street-63.jpg",
+            "images/mexico-street-64.jpg",
+            "images/mexico-street-65.jpg",
+            "images/mexico-street-66.jpg"
         ]
     },
    
