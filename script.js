@@ -4,22 +4,43 @@
 
 const projects = {
 
-   portraits: {
-    country: "Portraits",
-    name: "Portraits",
-    description: "",
-    photos: [
-        "images/port-1.jpg",
-        "images/port-2.jpg",
-        "images/port-3.jpg",
-        "images/port-4.jpg",
-        "images/port-5.jpg",
-        "images/port-6.jpg",
-        "images/port-7.jpg",
-        "images/port-8.jpg",
-        "images/port-9.jpg"
-    ]
-},
+   "portraits-selected": {
+        country: "Portraits",
+        name: "Selected",
+        description: "",
+        photos: [
+            "images/port-1.jpg",
+            "images/port-2.jpg",
+            "images/port-3.jpg",
+            "images/port-4.jpg",
+            "images/port-5.jpg",
+            "images/port-6.jpg",
+            "images/port-7.jpg",
+            "images/port-8.jpg",
+            "images/port-9.jpg"
+        ]
+    },
+
+    "portraits-mia": {
+        country: "Portraits",
+        name: "Mia",
+        description: "",
+        photos: []
+    },
+
+    "portraits-rosario": {
+        country: "Portraits",
+        name: "Rosario",
+        description: "",
+        photos: []
+    },
+
+    "portraits-carlos": {
+        country: "Portraits",
+        name: "Carlos",
+        description: "",
+        photos: []
+    },
 
     /* =====================
        MEXICO
@@ -481,7 +502,7 @@ const aboutClose =
    ========================= */
 
 let currentProject =
-    "portraits";
+    "portraits-selected";
 
 let currentSlide =
     0;
@@ -1256,5 +1277,5 @@ document.addEventListener(
    ========================= */
 
 showProject(
-    "portraits"
+    "portraits-selected"
 );
