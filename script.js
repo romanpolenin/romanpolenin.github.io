@@ -7,8 +7,7 @@ const projects = {
    portraits: {
     country: "Portraits",
     name: "Portraits",
-    description:
-        "Portrait photography.",
+    description: "",
     photos: [
         "images/port-1.jpg",
         "images/port-2.jpg",
