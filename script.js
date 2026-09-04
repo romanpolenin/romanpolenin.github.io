@@ -66,14 +66,39 @@ const projects = {
         country: "Portraits",
         name: "Lilo",
         description: "",
-        photos: []
+        photos: [
+            "images/lilo-1.jpg",
+            "images/lilo-2.jpg",
+            "images/lilo-3.jpg",
+            "images/lilo-4.jpg",
+            "images/lilo-5.jpg",
+            "images/lilo-6.jpg",
+            "images/lilo-7.jpg",
+            "images/lilo-8.jpg",
+            "images/lilo-9.jpg",
+            "images/lilo-10.jpg",
+            "images/lilo-11.jpg",
+            "images/lilo-12.jpg",
+            "images/lilo-13.jpg",
+            "images/lilo-14.jpg",
+            "images/lilo-15.jpg",
+            "images/lilo-16.jpg"
+        ]
     },
 
     "portraits-carlos": {
         country: "Portraits",
         name: "Carlos",
         description: "",
-        photos: []
+        photos: [
+            "images/carlos-1.jpg",
+            "images/carlos-2.jpg",
+            "images/carlos-3.jpg",
+            "images/carlos-4.jpg",
+            "images/carlos-5.jpg",
+            "images/carlos-6.jpg",
+            "images/carlos-7.jpg"
+        ]
     },
 
     /* =====================
