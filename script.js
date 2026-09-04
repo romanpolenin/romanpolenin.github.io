@@ -57,7 +57,6 @@ const projects = {
             "images/mia-29.jpg",
             "images/mia-30.jpg",
             "images/mia-31.jpg",
-            "images/mia-32.jpg",
             "images/mia-33.jpg"
         ]
     },
