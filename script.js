@@ -10,9 +10,15 @@ const projects = {
     description:
         "Portrait photography.",
     photos: [
-        "images/portraits-1.jpg",
-        "images/portraits-2.jpg",
-        "images/portraits-3.jpg"
+        "images/port-1.jpg",
+        "images/port-2.jpg",
+        "images/port-3.jpg",
+        "images/port-4.jpg",
+        "images/port-5.jpg",
+        "images/port-6.jpg",
+        "images/port-7.jpg",
+        "images/port-8.jpg",
+        "images/port-9.jpg"
     ]
 },
 
