@@ -745,3 +745,9 @@ body {
     height: auto;
     margin: 0 0 24px;
 }
+
+/* Smaller About photo */
+.about-photo {
+    width: 50%;
+    height: auto;
+}
