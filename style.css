@@ -734,3 +734,14 @@ body {
     }
 
 }
+
+/* =========================
+   ABOUT PHOTO
+   ========================= */
+
+.about-photo {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0 0 24px;
+}
