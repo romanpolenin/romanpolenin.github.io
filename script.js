@@ -129,7 +129,23 @@ const projects = {
         ]
     },
 
-    /* =====================
+    
+    "portraits-erick": {
+        country: "Portraits",
+        name: "Erick",
+        description: "",
+        photos: [
+            "images/erick-1.jpg",
+            "images/erick-2.jpg",
+            "images/erick-3.jpg",
+            "images/erick-4.jpg",
+            "images/erick-5.jpg",
+            "images/erick-6.jpg",
+            "images/erick-7.jpg"
+        ]
+    },
+
+/* =====================
        MEXICO
        ===================== */
    
