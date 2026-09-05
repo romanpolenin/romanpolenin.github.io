@@ -85,6 +85,32 @@ const projects = {
         ]
     },
 
+    "portraits-tanza": {
+        country: "Portraits",
+        name: "Tanza",
+        description: "",
+        photos: [
+            "images/tanza-1.jpg",
+            "images/tanza-2.jpg",
+            "images/tanza-3.jpg",
+            "images/tanza-4.jpg",
+            "images/tanza-5.jpg",
+            "images/tanza-6.jpg",
+            "images/tanza-7.jpg",
+            "images/tanza-8.jpg",
+            "images/tanza-9.jpg",
+            "images/tanza-10.jpg",
+            "images/tanza-11.jpg",
+            "images/tanza-12.jpg",
+            "images/tanza-13.jpg",
+            "images/tanza-14.jpg",
+            "images/tanza-15.jpg",
+            "images/tanza-16.jpg",
+            "images/tanza-17.jpg",
+            "images/tanza-18.jpg"
+        ]
+    },
+
     "portraits-sabrina": {
         country: "Portraits",
         name: "Sabrina",
