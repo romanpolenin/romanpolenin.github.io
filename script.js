@@ -85,6 +85,36 @@ const projects = {
         ]
     },
 
+    "portraits-sabrina": {
+        country: "Portraits",
+        name: "Sabrina",
+        description: "",
+        photos: [
+            "images/sabrina-1.jpg",
+            "images/sabrina-2.jpg",
+            "images/sabrina-3.jpg",
+            "images/sabrina-4.jpg",
+            "images/sabrina-5.jpg",
+            "images/sabrina-6.jpg",
+            "images/sabrina-7.jpg",
+            "images/sabrina-8.jpg",
+            "images/sabrina-9.jpg",
+            "images/sabrina-10.jpg",
+            "images/sabrina-11.jpg",
+            "images/sabrina-12.jpg",
+            "images/sabrina-13.jpg",
+            "images/sabrina-14.jpg",
+            "images/sabrina-15.jpg",
+            "images/sabrina-16.jpg",
+            "images/sabrina-17.jpg",
+            "images/sabrina-18.jpg",
+            "images/sabrina-19.jpg",
+            "images/sabrina-20.jpg",
+            "images/sabrina-21.jpg",
+            "images/sabrina-22.jpg"
+        ]
+    },
+
     "portraits-carlos": {
         country: "Portraits",
         name: "Carlos",
