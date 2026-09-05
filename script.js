@@ -109,7 +109,6 @@ const projects = {
             "images/sabrina-17.jpg",
             "images/sabrina-18.jpg",
             "images/sabrina-19.jpg",
-            "images/sabrina-20.jpg",
             "images/sabrina-21.jpg",
             "images/sabrina-22.jpg"
         ]
