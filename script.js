@@ -621,7 +621,15 @@ streetmusic: {
             "images/guatemala-street-46.jpg",
             "images/guatemala-street-47.jpg",
             "images/guatemala-street-48.jpg",
-            "images/guatemala-street-49.jpg"
+            "images/guatemala-street-49.jpg",
+            "images/guatemala-street-50.jpg",
+            "images/guatemala-street-51.jpg",
+            "images/guatemala-street-52.jpg",
+            "images/guatemala-street-53.jpg",
+            "images/guatemala-street-54.jpg",
+            "images/guatemala-street-55.jpg",
+            "images/guatemala-street-56.jpg",
+            "images/guatemala-street-57.jpg"
         ]
     }
 };
