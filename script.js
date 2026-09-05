@@ -425,11 +425,29 @@ streetmusic: {
     description:
         "",
     photos: [
-        "images/streetmusic-1.jpg",
-        "images/streetmusic-2.jpg",
-        "images/streetmusic-3.jpg",
-        "images/streetmusic-4.jpg"
-    ]
+            "images/streetmusic-1.jpg",
+            "images/streetmusic-2.jpg",
+            "images/streetmusic-3.jpg",
+            "images/streetmusic-4.jpg",
+            "images/streetmusic-5.jpg",
+            "images/streetmusic-6.jpg",
+            "images/streetmusic-7.jpg",
+            "images/streetmusic-8.jpg",
+            "images/streetmusic-9.jpg",
+            "images/streetmusic-10.jpg",
+            "images/streetmusic-11.jpg",
+            "images/streetmusic-12.jpg",
+            "images/streetmusic-13.jpg",
+            "images/streetmusic-14.jpg",
+            "images/streetmusic-15.jpg",
+            "images/streetmusic-16.jpg",
+            "images/streetmusic-17.jpg",
+            "images/streetmusic-18.jpg",
+            "images/streetmusic-19.jpg",
+            "images/streetmusic-20.jpg",
+            "images/streetmusic-21.jpg",
+            "images/streetmusic-22.jpg"
+        ]
 },
 
     /* =====================
