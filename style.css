@@ -761,3 +761,26 @@ body {
     margin-bottom: 12px;
 }
 
+
+
+/* =========================
+   PUBLICATIONS LIST
+   ========================= */
+
+.publications-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.publication-link {
+    color: #111111;
+    text-decoration: none;
+}
+
+.publication-link:hover {
+    opacity: 0.5;
+}
+
