@@ -806,6 +806,22 @@ const previousButton =
 const nextButton =
     document.getElementById("next");
 
+const publicationsButton =
+    document.getElementById(
+        "publications-button"
+    );
+
+const publications =
+    document.getElementById(
+        "publications"
+    );
+
+const publicationsClose =
+    document.getElementById(
+        "publications-close"
+    );
+
+
 const aboutButton =
     document.getElementById(
         "about-button"
@@ -1527,6 +1543,38 @@ slidesContainer.addEventListener(
 
     },
     { passive: true }
+);
+
+
+/* =========================
+   PUBLICATIONS
+   ========================= */
+
+/* OPEN PUBLICATIONS */
+
+publicationsButton.addEventListener(
+    "click",
+    () => {
+
+        publications.classList.add(
+            "open"
+        );
+
+    }
+);
+
+
+/* CLOSE PUBLICATIONS */
+
+publicationsClose.addEventListener(
+    "click",
+    () => {
+
+        publications.classList.remove(
+            "open"
+        );
+
+    }
 );
 
 
