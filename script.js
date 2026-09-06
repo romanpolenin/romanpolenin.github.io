@@ -262,6 +262,38 @@ const projects = {
         ]
     },
 
+    "nepal": {
+        country: "Film",
+        name: "Nepal",
+        description: "",
+        photos: [
+            "images/nepal-1.jpg",
+            "images/nepal-2.jpg",
+            "images/nepal-3.jpg",
+            "images/nepal-4.jpg",
+            "images/nepal-5.jpg",
+            "images/nepal-6.jpg",
+            "images/nepal-7.jpg",
+            "images/nepal-8.jpg",
+            "images/nepal-9.jpg",
+            "images/nepal-10.jpg",
+            "images/nepal-11.jpg",
+            "images/nepal-12.jpg",
+            "images/nepal-13.jpg",
+            "images/nepal-14.jpg",
+            "images/nepal-15.jpg",
+            "images/nepal-16.jpg",
+            "images/nepal-17.jpg",
+            "images/nepal-18.jpg",
+            "images/nepal-19.jpg",
+            "images/nepal-20.jpg",
+            "images/nepal-21.jpg",
+            "images/nepal-22.jpg",
+            "images/nepal-23.jpg",
+            "images/nepal-24.jpg"
+        ]
+    },
+
     "china": {
         country: "Film",
         name: "China",
