@@ -347,6 +347,55 @@ const projects = {
         ]
     },
 
+    "mangistai": {
+        country: "Film",
+        name: "Mangistai",
+        description: "",
+        photos: [
+            "images/mangistau-1.jpg",
+            "images/mangistau-2.jpg",
+            "images/mangistau-3.jpg",
+            "images/mangistau-4.jpg",
+            "images/mangistau-5.jpg",
+            "images/mangistau-6.jpg",
+            "images/mangistau-7.jpg",
+            "images/mangistau-8.jpg",
+            "images/mangistau-9.jpg",
+            "images/mangistau-10.jpg",
+            "images/mangistau-11.jpg",
+            "images/mangistau-12.jpg",
+            "images/mangistau-13.jpg",
+            "images/mangistau-14.jpg",
+            "images/mangistau-15.jpg",
+            "images/mangistau-16.jpg",
+            "images/mangistau-17.jpg",
+            "images/mangistau-18.jpg",
+            "images/mangistau-19.jpg",
+            "images/mangistau-20.jpg",
+            "images/mangistau-21.jpg",
+            "images/mangistau-22.jpg",
+            "images/mangistau-23.jpg",
+            "images/mangistau-24.jpg",
+            "images/mangistau-25.jpg",
+            "images/mangistau-26.jpg",
+            "images/mangistau-27.jpg",
+            "images/mangistau-28.jpg",
+            "images/mangistau-29.jpg",
+            "images/mangistau-30.jpg",
+            "images/mangistau-31.jpg",
+            "images/mangistau-32.jpg",
+            "images/mangistau-33.jpg",
+            "images/mangistau-34.jpg",
+            "images/mangistau-35.jpg",
+            "images/mangistau-36.jpg",
+            "images/mangistau-37.jpg",
+            "images/mangistau-38.jpg",
+            "images/mangistau-39.jpg",
+            "images/mangistau-40.jpg",
+            "images/mangistau-41.jpg"
+        ]
+    },
+
     /* =====================
        MEXICO
        ===================== */
