@@ -347,9 +347,9 @@ const projects = {
         ]
     },
 
-    "mangistai": {
+    "mangistau": {
         country: "Film",
-        name: "Mangistai",
+        name: "Mangistau",
         description: "",
         photos: [
             "images/mangistau-1.jpg",
