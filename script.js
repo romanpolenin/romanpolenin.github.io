@@ -140,6 +140,35 @@ const projects = {
         ]
     },
 
+    "portraits-alexandra": {
+        country: "Portraits",
+        name: "Alexandra",
+        description: "",
+        photos: [
+            "images/alexandra-1.jpg",
+            "images/alexandra-2.jpg",
+            "images/alexandra-3.jpg",
+            "images/alexandra-4.jpg",
+            "images/alexandra-5.jpg",
+            "images/alexandra-6.jpg",
+            "images/alexandra-7.jpg",
+            "images/alexandra-8.jpg",
+            "images/alexandra-9.jpg",
+            "images/alexandra-10.jpg",
+            "images/alexandra-11.jpg",
+            "images/alexandra-12.jpg",
+            "images/alexandra-13.jpg",
+            "images/alexandra-14.jpg",
+            "images/alexandra-15.jpg",
+            "images/alexandra-16.jpg",
+            "images/alexandra-17.jpg",
+            "images/alexandra-18.jpg",
+            "images/alexandra-19.jpg",
+            "images/alexandra-20.jpg",
+            "images/alexandra-21.jpg"
+        ]
+    },
+
     "portraits-tanza": {
         country: "Portraits",
         name: "Tanza",
