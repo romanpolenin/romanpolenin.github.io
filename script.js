@@ -110,6 +110,36 @@ const projects = {
         ]
     },
 
+    "portraits-emilio": {
+        country: "Portraits",
+        name: "Emilio",
+        description: "",
+        photos: [
+            "images/emilio-1.jpg",
+            "images/emilio-2.jpg",
+            "images/emilio-3.jpg",
+            "images/emilio-4.jpg",
+            "images/emilio-5.jpg",
+            "images/emilio-6.jpg",
+            "images/emilio-7.jpg",
+            "images/emilio-8.jpg",
+            "images/emilio-9.jpg",
+            "images/emilio-10.jpg",
+            "images/emilio-11.jpg",
+            "images/emilio-12.jpg",
+            "images/emilio-13.jpg",
+            "images/emilio-14.jpg",
+            "images/emilio-15.jpg",
+            "images/emilio-16.jpg",
+            "images/emilio-17.jpg",
+            "images/emilio-18.jpg",
+            "images/emilio-19.jpg",
+            "images/emilio-20.jpg",
+            "images/emilio-21.jpg",
+            "images/emilio-22.jpg"
+        ]
+    },
+
     "portraits-tanza": {
         country: "Portraits",
         name: "Tanza",
