@@ -952,7 +952,7 @@ const aboutClose =
    ========================= */
 
 let currentProject =
-    "portraits-selected";
+    "portraits-emilio";
 
 let currentSlide =
     0;
@@ -1759,5 +1759,5 @@ document.addEventListener(
    ========================= */
 
 showProject(
-    "portraits-selected"
+    "portraits-emilio"
 );
