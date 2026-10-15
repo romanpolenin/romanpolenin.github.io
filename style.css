@@ -784,3 +784,13 @@ body {
     opacity: 0.5;
 }
 
+
+
+/* Nested Music folder under Projects */
+.country-title.music-folder {
+    padding-left: 10px;
+}
+
+.country-projects.music-submenu {
+    margin-left: 10px;
+}

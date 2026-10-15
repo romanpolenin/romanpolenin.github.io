@@ -920,7 +920,52 @@ streetmusic: {
             "images/guatemala-street-52.jpg",
             "images/guatemala-street-53.jpg"
         ]
-    }
+    },
+
+    "music-live": {
+        country: "Projects",
+        name: "Live",
+        description: "",
+        photos: [
+            "images/live-1.jpg",
+            "images/live-2.jpg",
+            "images/live-3.jpg",
+            "images/live-4.jpg",
+            "images/live-5.jpg",
+            "images/live-6.jpg",
+            "images/live-7.jpg",
+            "images/live-8.jpg",
+            "images/live-9.jpg",
+            "images/live-10.jpg",
+            "images/live-11.jpg",
+            "images/live-12.jpg",
+            "images/live-13.jpg",
+            "images/live-14.jpg",
+            "images/live-15.jpg",
+            "images/live-16.jpg",
+            "images/live-17.jpg",
+            "images/live-18.jpg",
+            "images/live-19.jpg",
+            "images/live-20.jpg",
+            "images/live-21.jpg",
+            "images/live-22.jpg",
+            "images/live-23.jpg",
+            "images/live-24.jpg",
+            "images/live-25.jpg",
+            "images/live-26.jpg",
+            "images/live-27.jpg",
+            "images/live-28.jpg",
+            "images/live-29.jpg",
+            "images/live-30.jpg",
+            "images/live-31.jpg",
+            "images/live-32.jpg",
+            "images/live-33.jpg",
+            "images/live-34.jpg",
+            "images/live-35.jpg",
+            "images/live-36.jpg",
+            "images/live-37.jpg"
+        ]
+    },
 };
 
 
