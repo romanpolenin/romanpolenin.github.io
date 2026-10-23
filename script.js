@@ -963,7 +963,24 @@ streetmusic: {
             "images/live-34.jpg",
             "images/live-35.jpg",
             "images/live-36.jpg",
-            "images/live-37.jpg"
+            "images/live-37.jpg",
+            "images/live-38.jpg",
+            "images/live-39.jpg",
+            "images/live-40.jpg",
+            "images/live-41.jpg",
+            "images/live-42.jpg",
+            "images/live-43.jpg",
+            "images/live-44.jpg",
+            "images/live-45.jpg",
+            "images/live-46.jpg",
+            "images/live-47.jpg",
+            "images/live-48.jpg",
+            "images/live-49.jpg",
+            "images/live-50.jpg",
+            "images/live-51.jpg",
+            "images/live-52.jpg",
+            "images/live-53.jpg",
+            "images/live-54.jpg"
         ]
     },
 };
