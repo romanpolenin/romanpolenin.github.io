@@ -980,7 +980,14 @@ streetmusic: {
             "images/live-51.jpg",
             "images/live-52.jpg",
             "images/live-53.jpg",
-            "images/live-54.jpg"
+            "images/live-54.jpg",
+            "images/live-55.jpg",
+            "images/live-56.jpg",
+            "images/live-57.jpg",
+            "images/live-58.jpg",
+            "images/live-59.jpg",
+            "images/live-60.jpg",
+            "images/live-61.jpg"
         ]
     },
 };
