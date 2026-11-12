@@ -218,6 +218,7 @@ const projects = {
             "images/tanza-1.jpg",
             "images/tanza-2.jpg",
             "images/tanza-3.jpg",
+            "images/tanza-4.jpg",
             "images/tanza-5.jpg",
             "images/tanza-6.jpg",
             "images/tanza-7.jpg",
@@ -227,11 +228,7 @@ const projects = {
             "images/tanza-11.jpg",
             "images/tanza-12.jpg",
             "images/tanza-13.jpg",
-            "images/tanza-14.jpg",
-            "images/tanza-15.jpg",
-            "images/tanza-16.jpg",
-            "images/tanza-17.jpg",
-            "images/tanza-18.jpg"
+            "images/tanza-14.jpg"
         ]
     },
 
