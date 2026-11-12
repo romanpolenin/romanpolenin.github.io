@@ -133,10 +133,7 @@ const projects = {
             "images/emilio-16.jpg",
             "images/emilio-17.jpg",
             "images/emilio-18.jpg",
-            "images/emilio-19.jpg",
-            "images/emilio-20.jpg",
-            "images/emilio-21.jpg",
-            "images/emilio-22.jpg"
+            "images/emilio-19.jpg"
         ]
     },
 
