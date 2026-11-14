@@ -167,27 +167,7 @@ const projects = {
             "images/flor-13.jpg",
             "images/flor-14.jpg",
             "images/flor-15.jpg",
-            "images/flor-16.jpg",
-            "images/flor-17.jpg",
-            "images/flor-18.jpg",
-            "images/flor-19.jpg",
-            "images/flor-20.jpg",
-            "images/flor-21.jpg",
-            "images/flor-22.jpg",
-            "images/flor-23.jpg",
-            "images/flor-24.jpg",
-            "images/flor-25.jpg",
-            "images/flor-26.jpg",
-            "images/flor-27.jpg",
-            "images/flor-28.jpg",
-            "images/flor-29.jpg",
-            "images/flor-30.jpg",
-            "images/flor-31.jpg",
-            "images/flor-32.jpg",
-            "images/flor-33.jpg",
-            "images/flor-34.jpg",
-            "images/flor-35.jpg",
-            "images/flor-36.jpg"
+            "images/flor-16.jpg"
         ]
     },
 
