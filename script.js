@@ -92,8 +92,11 @@ const projects = {
             "images/lilo-12.jpg",
             "images/lilo-13.jpg",
             "images/lilo-14.jpg",
-            "images/lilo-15.jpg",
-            "images/lilo-16.jpg"
+            "images/lilo-16.jpg",
+            "images/lilo-18.jpg",
+            "images/lilo-21.jpg",
+            "images/lilo-22.jpg",
+            "images/lilo-27.jpg"
         ]
     },
 
