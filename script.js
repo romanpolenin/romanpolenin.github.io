@@ -92,11 +92,11 @@ const projects = {
             "images/lilo-12.jpg",
             "images/lilo-13.jpg",
             "images/lilo-14.jpg",
+            "images/lilo-15.jpg",
             "images/lilo-16.jpg",
+            "images/lilo-17.jpg",
             "images/lilo-18.jpg",
-            "images/lilo-21.jpg",
-            "images/lilo-22.jpg",
-            "images/lilo-27.jpg"
+            "images/lilo-19.jpg"
         ]
     },
 
@@ -143,16 +143,7 @@ const projects = {
             "images/alexandra-9.jpg",
             "images/alexandra-10.jpg",
             "images/alexandra-11.jpg",
-            "images/alexandra-12.jpg",
-            "images/alexandra-13.jpg",
-            "images/alexandra-14.jpg",
-            "images/alexandra-15.jpg",
-            "images/alexandra-16.jpg",
-            "images/alexandra-17.jpg",
-            "images/alexandra-18.jpg",
-            "images/alexandra-19.jpg",
-            "images/alexandra-20.jpg",
-            "images/alexandra-21.jpg"
+            "images/alexandra-12.jpg"
         ]
     },
 
