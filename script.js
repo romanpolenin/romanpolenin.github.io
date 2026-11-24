@@ -4,6 +4,49 @@
 
 const projects = {
 
+    "book-silk-road": {
+        country: "Books",
+        name: "Silk Road",
+        description: "Photobook · 2023",
+        photos: [
+            "images/silk-road-1.jpg",
+            "images/silk-road-2.jpg",
+            "images/silk-road-3.jpg",
+            "images/silk-road-4.jpg",
+            "images/silk-road-5.jpg",
+            "images/silk-road-6.jpg",
+            "images/silk-road-7.jpg",
+            "images/silk-road-8.jpg",
+            "images/silk-road-9.jpg",
+            "images/silk-road-10.jpg"
+        ]
+    },
+
+    "book-highest-journey": {
+        country: "Books",
+        name: "The Highest Journey",
+        description: "Photobook · 2024",
+        photos: [
+            "images/the-highest-journey-1.jpg",
+            "images/the-highest-journey-2.jpg",
+            "images/the-highest-journey-3.jpg",
+            "images/the-highest-journey-4.jpg",
+            "images/the-highest-journey-5.jpg",
+            "images/the-highest-journey-6.jpg",
+            "images/the-highest-journey-7.jpg",
+            "images/the-highest-journey-8.jpg",
+            "images/the-highest-journey-9.jpg",
+            "images/the-highest-journey-10.jpg",
+            "images/the-highest-journey-11.jpg",
+            "images/the-highest-journey-12.jpg",
+            "images/the-highest-journey-13.jpg",
+            "images/the-highest-journey-14.jpg",
+            "images/the-highest-journey-15.jpg",
+            "images/the-highest-journey-16.jpg"
+        ]
+    },
+
+
    "portraits-selected": {
         country: "Portraits",
         name: "Selected",
@@ -955,6 +998,11 @@ streetmusic: {
    ELEMENTS
    ========================= */
 
+const booksPage = document.getElementById("books-page");
+const booksMenuButton = document.getElementById("books-menu-button");
+const booksBack = document.getElementById("books-back");
+const galleryElement = document.querySelector(".gallery");
+
 const slidesContainer =
     document.getElementById("slides");
 
@@ -1268,6 +1316,14 @@ async function showProject(
         return;
     }
 
+    // Leave BOOKS cover page when opening any gallery.
+    booksPage.hidden = true;
+    galleryElement.classList.remove("books-landing");
+    const isBook = projectId === "book-silk-road" || projectId === "book-highest-journey";
+    galleryElement.classList.toggle("books-detail", isBook);
+    booksBack.hidden = !isBook;
+    booksMenuButton.classList.toggle("active", isBook);
+
     const loadToken =
         ++projectLoadToken;
 
@@ -1534,6 +1590,28 @@ function updateCounter() {
 
 
 /* =========================
+   BOOKS LANDING
+   ========================= */
+function showBooks() {
+    // Invalidate any asynchronous gallery load while covers are displayed.
+    ++projectLoadToken;
+    booksPage.hidden = false;
+    booksBack.hidden = true;
+    galleryElement.classList.remove("books-detail");
+    galleryElement.classList.add("books-landing");
+    projectButtons.forEach(button => button.classList.remove("active"));
+    booksMenuButton.classList.add("active");
+    about.classList.remove("open");
+    publications.classList.remove("open");
+}
+
+booksMenuButton.addEventListener("click", showBooks);
+booksBack.addEventListener("click", showBooks);
+document.querySelectorAll("[data-book]").forEach(button => {
+    button.addEventListener("click", () => showProject(button.dataset.book));
+});
+
+/* =========================
    PROJECT BUTTONS
    ========================= */
 
@@ -1627,6 +1705,14 @@ document.addEventListener(
 
         }
 
+
+        if (event.key === "Escape" && galleryElement.classList.contains("books-detail")) {
+            showBooks();
+            return;
+        }
+        if (galleryElement.classList.contains("books-landing")) {
+            return;
+        }
 
         if (
             event.key === "ArrowRight"

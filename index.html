@@ -303,6 +303,8 @@
             id="projects-projects"
         >
 
+            <button class="project" id="books-menu-button" type="button"><span>Books</span></button>
+
             <button
                 class="project"
                 data-project="sombrero"
@@ -390,6 +392,24 @@
 
     <main class="gallery">
 
+
+        <!-- BOOKS — shared cover page -->
+        <section id="books-page" class="books-page" aria-label="Photobooks" hidden>
+            <div class="books-page-title">Books</div>
+            <div class="books-grid">
+                <button class="books-card" type="button" data-book="book-silk-road">
+                    <img src="images/silk-road-cover.jpg" alt="Silk Road photobook cover" loading="lazy">
+                    <span class="books-card-title">Silk Road</span>
+                    <span class="books-card-year">2023</span>
+                </button>
+                <button class="books-card" type="button" data-book="book-highest-journey">
+                    <img src="images/the-highest-journey-cover.jpg" alt="The Highest Journey photobook cover" loading="lazy">
+                    <span class="books-card-title">The Highest Journey</span>
+                    <span class="books-card-year">2024</span>
+                </button>
+            </div>
+        </section>
+        <button id="books-back" class="books-back" type="button" hidden>← Books</button>
 
         <div class="gallery-header">
 
